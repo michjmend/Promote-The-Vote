@@ -10,7 +10,7 @@ import logo from './logo.svg';
   return (
     <Router>
       <>
-      <h2>Promote-The-Vote with a flying eagle across the top maybe. idk we'll see lol we'll put it in icebobx</h2><img src={logo} width="30" height="30" alt="PromoteTheVote" />
+      <h2>Promote-The-Vote with a flying eagle across the top maybe. idk we'll see lol we'll put it in icebox</h2><img src={logo} width="30" height="30" alt="PromoteTheVote" />
         <div className="d-flex" id="wrapper">
           <SideNavbar />
           <MainContent />
