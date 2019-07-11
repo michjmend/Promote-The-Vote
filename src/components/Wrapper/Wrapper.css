@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Exo|Michroma|Muli|Special+Elite&display=swap');
+
+/* Google Fonts
+font-family: 'Muli', sans-serif;
+font-family: 'Exo', sans-serif;
+font-family: 'Special Elite', cursive;
+font-family: 'Michroma', sans-serif; */
+
+body {
+  background:url("blurredVoteStrip.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment:fixed;
+  font-family: 'Michroma', sans-serif;
+}
+
