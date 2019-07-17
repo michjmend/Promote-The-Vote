@@ -46,7 +46,7 @@ function App() {
           </Container>
         </Wrapper>
 
-        <div className="d-flex" id="wrapper">
+       <div className="d-flex" id="wrapper">
           <SideNavbar />
           <MainContent />
         </div>
