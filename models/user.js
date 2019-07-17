@@ -1,72 +1,67 @@
-var bcrypt = require("bcrypt-nodejs");
+const mongoose = require("mongoose");
 
-module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    // Giving the user model a name of type STRING
+// Save a reference to the Schema constructor
+const Schema = mongoose.Schema;
+
+// Using the Schema constructor, create a new UserSchema object
+const UserSchema = new Schema({
     username: {
-      type: DataTypes.STRING(50),
-      allowNull: false,
-      unique: true
+      type: String,
+      required: true
     },
     password: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
+      type: String,
+      required: true
+    },
 
     firstname: {
-      type: DataTypes.STRING,
-      allowNull: true
-    }
+      type: String,
+      required: true
+    },
 
     lastname: {
-      type: DataTypes.STRING,
-      allowNull: true
-    }
+      type: String,
+      required: true
+    },
 
     email: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
+      type: String,
+      required: true
+    },
 
     address1: {
-      type: DataTypes.STRING,
-      allowNull: true
-    }
+      type: String,
+      required: false
+    },
 
     address2: {
-      type: DataTypes.STRING,
-      allowNull: true
-    }
+      type: String,
+      required: false
+        },
 
     state: {
-      type: DataTypes.STRING,
-      allowNull: true
-    }
+      type: String,
+      required: false
+    },
 
     zip: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
+      type: String,
+      required: true
+    },
 
     picture: {
-      type: DataTypes.STRING
+      type: String,
+      required: false
+    },
+
+    post: {
+      type: Schema.Types.ObjectId,
+      ref: "Post"
     }
-
-
   });
 
-  User.associate = function(models) {
-    // Associating user with Posts
-    // When user is deleted, also delete any associated Posts
-    User.hasMany(models.Post, {
-      onDelete: "cascade"
-    });
+// This creates our model from the above schema, using mongoose's model method
+var User = mongoose.model("User", UserSchema);
 
-  };
-
-  User.prototype.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password);
-  };
-
-  return User;
-};
+// Export the Article model
+module.exports = User;
