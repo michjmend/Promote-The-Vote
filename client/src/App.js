@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import SideNavbar from './components/SideNavbar/SideNavbar';
 import MainContent from './components/MainContent/MainContent';
-import logo from './logo.svg';
+
 // use normal bootstrap if required. give yarn add bootstrap for below...
 // import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -23,8 +23,6 @@ import logo from './logo.svg';
             </Row>
           </Container>
          </Wrapper>
-    
-         <img src={logo} width="30" height="30" alt="PromoteTheVote" />
     
        <div className="d-flex" id="wrapper">
           <SideNavbar />
