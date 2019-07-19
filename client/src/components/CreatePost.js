@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default class CreatePost extends Component {
-
-        constuctor(props) {
-                super(props);
+class CreatePost extends Component {
+        constructor(props){
+                super();
 
                 this.onChangePostTitle = this.onChangePostTitle.bind(this);
                 this.onChangePostReview = this.onChangePostReview.bind(this);
@@ -95,3 +94,4 @@ console.log('Picture URL : ${this.state.picture}');
         )
     }
 }
+export default CreatePost
