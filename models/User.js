@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
 const Schema = mongoose.Schema;
+
 // Using the Schema constructor, create a new UserSchema object
 const UserSchema = new Schema({
     username: {
@@ -30,7 +31,8 @@ const UserSchema = new Schema({
 
     address1: {
       type: String,
-      required: false
+      required: true
+
     },
 
     address2: {
@@ -40,7 +42,9 @@ const UserSchema = new Schema({
 
     state: {
       type: String,
-      required: false
+      required: true
+    
+
     },
 
     zip: {
