@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import SideNavbar from './components/SideNavbar/SideNavbar';
 import MainContent from './components/MainContent/MainContent';
 import $ from 'jquery';
+import axios from 'axios';
 // use normal bootstrap if required. give yarn add bootstrap for below...
 // import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -21,12 +22,18 @@ function App() {
     <Router>
       <>
         <Wrapper>
-          <Container>
+          <Container fluid="true">
             <Row>
               <Col>
                 <h1>Promote The Vote</h1>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
                 <nav className="navbar navbar-expand-lg border-bottom">
-                  <button className="btn btn-primary" onClick={ toggle } id="menu-toggle">Toggle Menu</button>
+                  <button className="btn btn-danger" onClick={ toggle } id="menu-toggle">
+                    MENU
+                  </button>
                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                   </button>
@@ -46,7 +53,7 @@ function App() {
           </Container>
         </Wrapper>
 
-       <div className="d-flex" id="wrapper">
+        <div className="d-flex" id="wrapper">
           <SideNavbar />
           <MainContent />
         </div>

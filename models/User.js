@@ -32,6 +32,7 @@ const UserSchema = new Schema({
     address1: {
       type: String,
       required: true
+
     },
 
     address2: {
@@ -42,6 +43,8 @@ const UserSchema = new Schema({
     state: {
       type: String,
       required: true
+    
+
     },
 
     zip: {
