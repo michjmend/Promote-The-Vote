@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import SideNavbar from './components/SideNavbar/SideNavbar';
 import MainContent from './components/MainContent/MainContent';
 import $ from 'jquery';
+import axios from 'axios';
 // use normal bootstrap if required. give yarn add bootstrap for below...
 // import "bootstrap/dist/css/bootstrap.min.css";
 
