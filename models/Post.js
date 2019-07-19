@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
 const Schema = mongoose.Schema;
-
 // Using the Schema constructor, create a new UserSchema object
 const PostSchema = new Schema({
     title: {
