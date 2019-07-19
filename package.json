@@ -5,7 +5,7 @@
     "server": "nodemon server.js",
     "client": "cd client && yarn start",
     "clientinstall": "yarn install --prefix client",
-    "dev": "cd client && yarn dev"
+    "dev": "concurrently \"yarn server\" \"yarn client\""
   },
   "repository": "https://github.com/michjmend/Promote-The-Vote.git",
   "author": "androosk <atirpok3@gmail.com>",
