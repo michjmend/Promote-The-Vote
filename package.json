@@ -2,10 +2,13 @@
   "name": "Promote-The-Vote",
   "version": "1.0.0",
   "scripts": {
+    "build": "cd client && react-scripts build",
     "server": "nodemon server.js",
     "client": "cd client && yarn start",
     "clientinstall": "yarn install --prefix client",
-    "dev": "concurrently \"yarn server\" \"yarn client\""
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "ngrokwin": "./ngrokwin http 5000",
+    "ngrokosx": "./ngrokosx http 5000"
   },
   "repository": "https://github.com/michjmend/Promote-The-Vote.git",
   "author": "androosk <atirpok3@gmail.com>",
@@ -22,7 +25,14 @@
     "mongoose": "^5.6.4",
     "mongos": "^0.0.0",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.9",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1"
   },
   "devDependencies": {
     "concurrently": "^4.1.1"
