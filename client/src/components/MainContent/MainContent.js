@@ -6,7 +6,7 @@ import DisplayPosts from "../DisplayPosts";
 import CreatePost from "../CreatePost";
 import EditPost from "../EditPost";
 import DeletePost from "../DeletePost";
-import Scrapper from "../Scrapper/Scrapper";
+import Scrapper from "../Scraper/Scraper";
 // use normal bootstrap if required. give yarn add bootstrap for below...
 // import "bootstrap/dist/css/bootstrap.min.css";
 function MainContent() {

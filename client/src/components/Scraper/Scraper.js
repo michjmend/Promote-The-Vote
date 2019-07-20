@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import "./Scrapper.css";
+import "./Scraper.css";
 // import Article from  "./Article";
 
 

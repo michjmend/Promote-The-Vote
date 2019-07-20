@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
 const Schema = mongoose.Schema;
+
 // Using the Schema constructor, create a new UserSchema object
-let PostSchema = new Schema({
+const PostsSchema = new Schema({
     title: {
       type: String,
       required: true
@@ -25,7 +26,7 @@ let PostSchema = new Schema({
 
 
   // This creates our model from the above schema, using mongoose's model method
-var Post = mongoose.model("Post", PostSchema);
+var Posts = mongoose.model("Posts", PostsSchema);
 
 // Export the Note model
-module.exports = Post;
+module.exports = Posts;
