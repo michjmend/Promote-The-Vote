@@ -2,6 +2,7 @@
   "name": "Promote-The-Vote",
   "version": "1.0.0",
   "scripts": {
+    "build": "cd client && ./node_modules/.bin/react-scripts build",
     "server": "nodemon server.js",
     "client": "cd client && yarn start",
     "clientinstall": "yarn install --prefix client",
