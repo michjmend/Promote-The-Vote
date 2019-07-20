@@ -9,7 +9,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false
-    }) 
+    })
       console.log("MongoDB Connected")
     } catch(err) {
       console.error(err.message)
@@ -18,3 +18,4 @@ const connectDB = async () => {
 }
 
 module.exports = connectDB
+
