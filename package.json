@@ -6,7 +6,9 @@
     "server": "nodemon server.js",
     "client": "cd client && yarn start",
     "clientinstall": "yarn install --prefix client",
-    "dev": "concurrently \"yarn server\" \"yarn client\""
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "ngrokwin": "./ngrokwin http 5000",
+    "ngrokosx": "./ngrokosx http 5000"
   },
   "repository": "https://github.com/michjmend/Promote-The-Vote.git",
   "author": "androosk <atirpok3@gmail.com>",

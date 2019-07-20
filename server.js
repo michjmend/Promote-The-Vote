@@ -17,6 +17,10 @@ app.get('/', (req, res) => {
   res.sendFile(HTML_FILE); // EDIT
  });
 // Routes
+app.get("/test", (req,res) =>
+  res.json({ test: "Welcome to the Promote-the-Vote API" })
+)
+
 app.use("/api/users", require("./routes/users"))
 // router.use(function(req, res) {
 //   res.sendFile(path.join(__dirname, “/client/public/index.html”));
