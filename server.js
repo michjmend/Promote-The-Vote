@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 
 var axios = require("axios");
 var cheerio = require("cheerio");
-require('dotenv').config()
+
 
 // var router = express.Router();
 
@@ -13,7 +13,7 @@ const app = express()
 
 
 // Require all models
-var db = require("./client/src/components/Scrapper");
+var db = require("./client/src/components/Scraper");
 
 
 app.use("/api/scraper", require("./routes/scraper"));
