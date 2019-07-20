@@ -8,7 +8,7 @@ import "./Scraper.css";
 export default class Scrapper extends Component {
   render() {
     return (
-      <div>
+      <div className= "facts">
         <h1>What Are the Facts?</h1>
         <h2>
           <i>
