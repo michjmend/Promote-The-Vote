@@ -56,7 +56,7 @@ class CreatePost extends Component {
 
     render() {
         return (
-            <div className="card" style={{ magrinTop: 20 }}>
+            <div className="card" style={{ marginTop: 20 }}>
                 <Container id="CreatePostContent">
                     <h3 className="text-center">Post</h3>
                     <form onSubmit={this.onSubmit}>
