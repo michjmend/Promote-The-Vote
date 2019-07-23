@@ -2,9 +2,11 @@ import React, { Fragment, useContext } from 'react'
 // import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 import Wrapper from "../Wrapper/Wrapper";
+import logo from './logo.png';
 import { Container, Row, Col } from "react-bootstrap";
 import AuthContext from "../../context/auth/authContext"
 import $ from 'jquery';
+import './logo.css';
 // import PostContext from "../../context/post/postContext"
 
 const TopNav = () => {
@@ -52,11 +54,6 @@ const TopNav = () => {
         <Container fluid="true">
         <Row>
           <Col>
-            <h1>Promote The Vote</h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
             <nav className="navbar navbar-expand-lg border-bottom">
               <button className="btn btn-danger" onClick={ toggle } id="menu-toggle">
                 MENU
@@ -64,6 +61,7 @@ const TopNav = () => {
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
+              <div className="rotate-scale-up"><img src={logo} alt ={"logo"}/></div>
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
                 {isAuthenticated ? authLinks : guestLinks }
@@ -77,6 +75,7 @@ const TopNav = () => {
               </div>
             </nav>
           </Col>
+
         </Row>
         </Container>
       </Wrapper>
