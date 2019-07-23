@@ -35,12 +35,6 @@ app.get('/', (req, res) => {
  });
 }
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> f5dbb07daba8e1fd06d3e8cee3d0fd647c8a0b7c
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => console.log(`API server started on port ${PORT}`))
