@@ -1,36 +1,46 @@
 const express = require("express")
 const path = require('path'); // NEW
-// const connectDB = require("./config/db")
-const mongoose = require("mongoose")
+const connectDB = require("./config/db")
 const app = express()
 const DIST_DIR = path.join(__dirname, './client/build/'); // NEW
 const HTML_FILE = path.join(DIST_DIR, 'index.html'); // NEW
 
-const configDB = "mongodb://localhost/PromoteTheVote"
 // Connect to our database
-// connectDB()
-mongoose.connect(process.env.MONGODB_URI || configDB, {useNewUrlParser: true})
+connectDB()
+
 // Init middleware
 app.use(express.json({ extended: false }))
-app.use(express.static(DIST_DIR)); // NEW
-app.get('/', (req, res) => {
-  res.sendFile(HTML_FILE); // EDIT
- });
+
 // Routes
-app.get("/test", (req,res) =>
-  res.json({ test: "Welcome to the Promote-the-Vote API" })
+app.get("/", (req,res) =>
+  res.json({ msg: "Welcome to the Contact Keeper API" })
 )
 
+// app.get("/test", (req,res) =>
+//   res.json({ test: "Welcome to the Promote-the-Vote API" })
+// )
+
 app.use("/api/users", require("./routes/users"))
+app.use("/api/auth", require("./routes/auth"))
+// app.use("api/posts", require("./routes/posts"))
 // router.use(function(req, res) {
 //   res.sendFile(path.join(__dirname, “/client/public/index.html”));
 // });
 
 // app.use(router)
+if(process.env.NODE_ENV === "production") {
+app.use(express.static(DIST_DIR)); // NEW
+app.get('/', (req, res) => {
+  res.sendFile(HTML_FILE); // EDIT
+ });
+}
+
+<<<<<<< HEAD
 
 
 
-
+=======
+>>>>>>> f5dbb07daba8e1fd06d3e8cee3d0fd647c8a0b7c
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => console.log(`API server started on port ${PORT}`))

@@ -1,65 +1,35 @@
-import Wrapper from "./components/Wrapper/Wrapper";
-import { Container, Row, Col } from "react-bootstrap";
+import React from 'react';
 import './App.css';
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import TopNav from "./components/layouts/TopNav"
 import SideNavbar from './components/SideNavbar/SideNavbar';
 import MainContent from './components/MainContent/MainContent';
-import $ from 'jquery';
-import axios from 'axios';
+import Alerts from "./components/layouts/Alerts"
+import Register from "./components/auth/Register"
+import Login from "./components/auth/Login"
+
+import AlertState from "./context/alert/AlertState"
+import AuthState from "./context/auth/AuthState"
+
 // use normal bootstrap if required. give yarn add bootstrap for below...
 // import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-
-  const toggle = e => {
-    e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-  }
+const App = props => {
 
   return (
-    <Router>
-      <>
-        <Wrapper>
-          <Container fluid="true">
-            <Row>
-              <Col>
-                <h1>Promote The Vote</h1>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <nav className="navbar navbar-expand-lg border-bottom">
-                  <button className="btn btn-danger" onClick={ toggle } id="menu-toggle">
-                    MENU
-                  </button>
-                  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                  </button>
-                  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-                      <li className="nav-item active">
-                        <Link className="nav-link" href="#">Home <span className="sr-only">(current)</span></Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link className="nav-link" href="#">Login</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </nav>
-              </Col>
-            </Row>
-          </Container>
-        </Wrapper>
-
-        <div className="d-flex" id="wrapper">
-          <SideNavbar />
-          <MainContent />
-        </div>
-      </>
-    </Router>
-
+    <AuthState>
+      <AlertState>
+        <Router>
+          <TopNav />
+          <Alerts />
+            <Switch>
+              <Route exact path="/" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><MainContent /></div>)} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+            </Switch>
+        </Router>
+      </AlertState>
+    </AuthState>
   );
 }
 

@@ -24,8 +24,7 @@ export default class Scrapper extends Component {
             their website.
           </i>
         </h3>
-        {/* <Article /> */}
-
+        
         <ScraperApp />
 
       </div>

@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
-const UserSchema = new Schema({
+const UserSchema = mongoose.Schema({
     username: {
       type: String,
-      required: true
+      required: true,
+      unique: true
     },
     password: {
       type: String,
@@ -26,7 +27,7 @@ const UserSchema = new Schema({
 
     email: {
       type: String,
-      required: true
+      unique: true
     },
 
     address1: {
@@ -38,13 +39,16 @@ const UserSchema = new Schema({
     address2: {
       type: String,
       required: false
-        },
+    },
+
+    city: {
+      type: String,
+      required: true
+    },
 
     state: {
       type: String,
       required: true
-    
-
     },
 
     zip: {
@@ -55,12 +59,12 @@ const UserSchema = new Schema({
     picture: {
       type: String,
       required: false
-    },
-
-    post: {
-      type: Schema.Types.ObjectId,
-      ref: "Post"
     }
+
+    // post: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "Post"
+    // }
   });
 
 // This creates our model from the above schema, using mongoose's model method

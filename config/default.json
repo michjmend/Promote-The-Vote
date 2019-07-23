@@ -1,4 +1,4 @@
 {
   "mongoURI": "mongodb://localhost/PromoteTheVote",
-  "jwtSecret": "anysecretwilldo"
+  "jwtSecret": "notyourfatherssecret"
 }
