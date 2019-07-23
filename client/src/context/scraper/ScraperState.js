@@ -28,7 +28,7 @@ const ScraperApp = () => {
       //send results to handlebars
         results.push(result);
     });
-    
+
   });
   return (
     <div></div>
