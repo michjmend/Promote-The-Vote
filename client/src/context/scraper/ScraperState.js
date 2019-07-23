@@ -5,13 +5,15 @@ import ScraperContext from "./scraperContext";
 import scraperReducer from "./scraperReducer";
 import { GET_ARTICLES } from "../types";
 
+
 const ScraperApp = () => {
 
 
   axios.get("https://www.factcheck.org/").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
-    var $ = cheerio.load(response.data);
-    var results = [];
+    let $ = cheerio.load(response.data);
+    let results = [];
+    let result = {};
     // Now, we grab every h2 within an article tag, and do the following:
     $("article h3").each(function(i, element) {
 

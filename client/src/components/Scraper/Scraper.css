@@ -10,5 +10,18 @@ font-family: 'Michroma', sans-serif; */
   border-style: solid;
   border-color:rgb(44, 104, 255);
   background: rgba(118, 158, 201, 0.714);
-  font-size: 5px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px grey;
+  font-size: 40px;
+}
+
+h1{
+  font-size:40px !important;
+  color:white;
+}
+
+i{
+  font-size:15px !important;
+  color:white;
+  line-height: normal;
 }

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Scraper.css";
+import ScraperApp from "../../context/scraper/ScraperState"
 // import Article from  "./Article";
 
 
@@ -24,6 +25,9 @@ export default class Scrapper extends Component {
           </i>
         </h3>
         {/* <Article /> */}
+
+        <ScraperApp />
+
       </div>
     );
   }
