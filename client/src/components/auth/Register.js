@@ -114,15 +114,6 @@ const Register = props => {
               <div className="form-group row">
                 <label className="col-sm-2" htmlFor="picture">Profile Picture</label>
                 <input className="col-sm-10" type="text" name="picture" value={picture} onChange={onChange} />
-                <div className="input-group mb-3">
-                  <div className="custom-file">
-                    <input type="file" className="custom-file-input" id="inputGroupFile02" />
-                    <label className="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
-                  </div>
-                  <div className="input-group-append">
-                    <span className="input-group-text" id="inputGroupFileAddon02">Upload</span>
-                  </div>
-                </div>
               </div>
               <div className="form-group row">
                 <label className="col-sm-2" htmlFor="password">Password</label>
