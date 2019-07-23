@@ -42,24 +42,23 @@ const Login = props => {
   }
 
   return (
-    <Container className="Login card">
+    <Container id="logincontent" className="card">
       <Row>
         <Col>
           <div className="form-container">
-            <h1 className="text-center">
-              Account <span className="text-primary">Login</span>
+            <h1 className="text-center"><i class="fas fa-user"></i> Login
             </h1>
             <Container id="inputs">
               <Row>
                 <Col>
                   <form onSubmit={onSubmit}>
                     <div className="form-group row">
-                      <label className="col-md-3" htmlFor="username">Username</label>
-                      <input className="col-md-8" type="username" name="username" value={username} onChange={onChange} required />
+                      <label className="col-md-12" htmlFor="username"><i class="far fa-envelope"></i> Username</label>
+                      <input className="col-md-12" type="username" name="username" value={username} onChange={onChange} required />
                     </div>
                     <div className="form-group row">
-                      <label className="col-md-3" htmlFor="password">Password</label>
-                      <input className="col-md-8" type="password" name="password" value={password} onChange={onChange} required />
+                      <label className="col-md-12" htmlFor="password"><i class="fas fa-lock"></i> Password</label>
+                      <input className="col-md-12" type="password" name="password" value={password} onChange={onChange} required />
                     </div>
                     <input type="submit" value="LOGIN" className="loginButton btn btn-danger btn-block" />
                   </form>
@@ -72,5 +71,6 @@ const Login = props => {
     </Container>
   )
 }
+
 
 export default Login
