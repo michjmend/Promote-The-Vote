@@ -1,10 +1,13 @@
+require("mongoose-type-url")
 const mongoose = require("mongoose");
 
+const { Schema } = mongoose
+const { Url } = mongoose.SchemaTypes
 // Save a reference to the Schema constructor
 // const Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
-const UserSchema = mongoose.Schema({
+const UserSchema = new Schema({
     username: {
       type: String,
       required: true,
@@ -38,7 +41,6 @@ const UserSchema = mongoose.Schema({
 
     address2: {
       type: String,
-      required: false
     },
 
     city: {
@@ -57,8 +59,8 @@ const UserSchema = mongoose.Schema({
     },
 
     picture: {
-      type: String,
-      required: false
+      type: Url,
+      default: "https://via.placeholder.com/200x200"
     }
 
     // post: {

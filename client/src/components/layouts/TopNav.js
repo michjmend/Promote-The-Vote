@@ -9,7 +9,6 @@ import $ from 'jquery';
 
 const TopNav = () => {
   const authContext = useContext(AuthContext)
-  console.log(authContext)
   // const postContext = useContext(PostContext)
   const { logout, user, isAuthenticated } = authContext
 
@@ -25,12 +24,12 @@ const TopNav = () => {
   const authLinks = (
     <Fragment>
       <li>
-        Hello { user && user.firstname }
+        <span>Hello { user && user.firstname } </span>
       </li>
       <li>
         <a onClick={ onLogout } href="#!">
-          <i className="fas fa-sign-out-alt"></i>
-          <span className="hide-sm">Logout</span>
+          <i className="fas fa-sign-out-alt"> </i>
+          <span className="hide-sm"> Logout</span>
         </a>
       </li>
     </Fragment>
@@ -67,12 +66,6 @@ const TopNav = () => {
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
                 {isAuthenticated ? authLinks : guestLinks }
-                  {/* <li className="nav-item active">
-                    <Link className="nav-link" href="#">Home <span className="sr-only">(current)</span></Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" href="#">Login</Link>
-                  </li> */}
                 </ul>
               </div>
             </nav>

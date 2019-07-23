@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import AlertContext from "../../context/alert/alertContext"
 import AuthContext from "../../context/auth/authContext"
+import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget"
 
 const Register = props => {
   const alertContext = useContext(AlertContext)
@@ -9,6 +10,9 @@ const Register = props => {
   const { setAlert } = alertContext
 
   const { register, error, clearErrors, isAuthenticated } = authContext
+
+  let cloudinaryUrl;
+  let source = {}
 
   useEffect(() => {
     if(isAuthenticated) {
@@ -116,6 +120,9 @@ const Register = props => {
         <div className="form-group">
           <label htmlFor="password2">Confirm Password</label>
           <input type="password" name="password2" value={password2} onChange={onChange} required minLength="6" />
+        </div>
+        <div>
+          <CloudinaryUploadWidget cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
         </div>
         <input type="submit" value="register" className="btn btn-primary btn-block" />
       </form>
