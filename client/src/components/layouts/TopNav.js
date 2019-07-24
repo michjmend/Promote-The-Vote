@@ -49,7 +49,7 @@ const TopNav = () => {
   )
 
   return (
-    <div>
+    <div className="container-fluid">
       <Wrapper>
         <Container fluid="true">
         <Row>
@@ -61,7 +61,7 @@ const TopNav = () => {
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div className="rotate-scale-up"><img src={logo} alt ={"logo"}/></div>
+              <Link to="/"><div className="rotate-scale-up"><img src={logo} alt ={"logo"}/></div></Link>
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
                 {isAuthenticated ? authLinks : guestLinks }
