@@ -1,21 +1,30 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect, useCallback } from 'react'
 import AlertContext from "../../context/alert/alertContext"
 import AuthContext from "../../context/auth/authContext"
 import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget"
 import { Container, Row, Col } from "react-bootstrap";
+import axios from "axios"
 import './Register.css'
 
 const Register = props => {
   const alertContext = useContext(AlertContext)
   const authContext = useContext(AuthContext)
+  
+  // Cloudinary stuff
+  const [isValid, setIsValid] = useState(true)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  let cloudinaryUrl;
+  let source = {}
 
   const { setAlert } = alertContext
 
   const { register, error, clearErrors, isAuthenticated } = authContext
 
-  let cloudinaryUrl;
-  let source = {}
+  const resetValues = () => {
+    setIsValid(true)
+    setIsSubmitted(true)
+    cloudinaryUrl = ""
+  }
 
   useEffect(() => {
     if(isAuthenticated) {
@@ -73,14 +82,14 @@ const Register = props => {
         picture
       })
     }
+    resetValues()
     if (!cloudinaryUrl) {
       setIsValid(false);
       return;
     }
-    API
+    axios
       .postInfo({
         picUrl: cloudinaryUrl,
-        note: description,
       }, source)
       .then(() => {
         getMediaInfo();
