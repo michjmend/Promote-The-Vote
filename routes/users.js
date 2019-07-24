@@ -38,7 +38,7 @@ async (req,res) => {
   if(!errors.isEmpty()){
     return res.status(400).json({ errors: errors.array() })
   }
-  const { username, password, firstname, lastname, address1, address2, state, zip, picture } = req.body
+  const { username, password, firstname, lastname, email, address1, address2, city, state, zip, picture } = req.body
 
   try{
     let user = await User.findOne({ email })
@@ -50,8 +50,10 @@ async (req,res) => {
       password,
       firstname,
       lastname,
+      email,
       address1,
       address2,
+      city,
       state,
       zip,
       picture

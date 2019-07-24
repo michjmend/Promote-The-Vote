@@ -5,11 +5,11 @@ const db = config.get("mongoURI")
 const connectDB = async () => {
   try {
     await mongoose
-    .connect(db, {
+    .connect(process.env.MONGODB_URI || db, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false
-    }) 
+    })
       console.log("MongoDB Connected")
     } catch(err) {
       console.error(err.message)
@@ -18,3 +18,4 @@ const connectDB = async () => {
 }
 
 module.exports = connectDB
+

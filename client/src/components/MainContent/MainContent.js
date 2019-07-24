@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import ReactDOM from "react-dom";
 import DisplayPosts from "../DisplayPosts";
-import CreatePost from "../CreatePost";
+import CreatePost from "../CreatePost/CreatePost";
 import EditPost from "../EditPost";
 import DeletePost from "../DeletePost";
 import Scrapper from "../Scraper/Scraper";

@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Scraper.css";
+import ScraperApp from "../../context/scraper/ScraperState"
 // import Article from  "./Article";
 
 
 export default class Scrapper extends Component {
   render() {
     return (
-      <div>
+      <div className= "facts">
         <h1>What Are the Facts?</h1>
         <h2>
           <i>
@@ -23,7 +24,9 @@ export default class Scrapper extends Component {
             their website.
           </i>
         </h3>
-        {/* <Article /> */}
+        
+        <ScraperApp />
+
       </div>
     );
   }
