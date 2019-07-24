@@ -18,9 +18,8 @@ function MainContent() {
               <div id="page-content-wrapper">
                 <div className="container-fluid">
 
-
                   <div className="card mb-3">
-                    <img src="..." className="card-img-top" alt="..." />
+                    <img src="https://media.giphy.com/media/ByVCdBesCZHi0/giphy.gif" height="100%" className="card-img-top" alt="..." />
                     <div className="card-body">
                       <h5 className="card-title">Card title</h5>
                       <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -30,7 +29,6 @@ function MainContent() {
                       <Link to="/delete/:id" className="btn btn-danger"><i class="fas fa-trash-alt"></i></Link>
                     </div>
                   </div>
-
 
                   {/* stuff sushmita put in */}
                   {/* <Route path="/" exact component={DisplayPosts} /> */}
