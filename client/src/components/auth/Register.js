@@ -2,10 +2,13 @@ import React, { useState, useContext, useEffect } from 'react'
 import AlertContext from "../../context/alert/alertContext"
 import AuthContext from "../../context/auth/authContext"
 import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget"
+import { Container, Row, Col } from "react-bootstrap";
+import './Register.css'
 
 const Register = props => {
   const alertContext = useContext(AlertContext)
   const authContext = useContext(AuthContext)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const { setAlert } = alertContext
 
@@ -41,6 +44,10 @@ const Register = props => {
     picture: "",
   })
 
+  const setCloudinaryInfo = (imgUrl) => {
+    cloudinaryUrl = imgUrl;
+  };
+
   const { username, firstname, lastname, email, address1, address2, city, state, zip, picture, password, password2 } = user
 
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value })
@@ -66,67 +73,86 @@ const Register = props => {
         picture
       })
     }
+    if (!cloudinaryUrl) {
+      setIsValid(false);
+      return;
+    }
+    API
+      .postInfo({
+        picUrl: cloudinaryUrl,
+        note: description,
+      }, source)
+      .then(() => {
+        getMediaInfo();
+        resetValues();
+      })
+      .catch(err => console.log(err));
   }
 
   return (
-    <div>
-      <h1>
-        Account <span className="text-primary">Register</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input type="text" name="username" value={username} onChange={onChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="firstname">First name</label>
-          <input type="text" name="firstname" value={firstname} onChange={onChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="lastname">Last name</label>
-          <input type="text" name="lastname" value={lastname} onChange={onChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" value={email} onChange={onChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="address1">Address 1</label>
-          <input type="text" name="address1" value={address1} onChange={onChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="address2">Address 2</label>
-          <input type="text" name="address2" value={address2} onChange={onChange} />
-        </div>
-        <div className="form-group">
-          <label htmlFor="city">City</label>
-          <input type="text" name="city" value={city} onChange={onChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="state">State</label>
-          <input type="text" name="state" value={state} onChange={onChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="zip">Zip Code</label>
-          <input type="text" name="zip" value={zip} onChange={onChange} required />
-        </div><div className="form-group">
-          <label htmlFor="picture">Profile Picture</label>
-          <input type="text" name="picture" value={picture} onChange={onChange} />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input type="password" name="password" value={password} onChange={onChange} required minLength="6" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password2">Confirm Password</label>
-          <input type="password" name="password2" value={password2} onChange={onChange} required minLength="6" />
-        </div>
-        <div>
-          <CloudinaryUploadWidget cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
-        </div>
-        <input type="submit" value="register" className="btn btn-primary btn-block" />
-      </form>
-    </div>
+    <Container className="Register card">
+      <Row>
+        <Col>
+          <div>
+            <h1 className="text-center">
+              Account <span className="text-primary">Register</span>
+            </h1>
+            <form onSubmit={onSubmit}>
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="username">Username</label>
+                <input className="col-sm-10" type="text" name="username" value={username} onChange={onChange} required />
+              </div>
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="firstname">First name</label>
+                <input className="col-sm-10" type="text" name="firstname" value={firstname} onChange={onChange} required />
+              </div>
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="lastname">Last name</label>
+                <input className="col-sm-10" type="text" name="lastname" value={lastname} onChange={onChange} required />
+              </div>
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="email">Email</label>
+                <input className="col-sm-10" type="email" name="email" value={email} onChange={onChange} required />
+              </div>
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="address1">Address 1</label>
+                <input className="col-sm-10" type="text" name="address1" value={address1} onChange={onChange} required />
+              </div>
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="address2">Address 2</label>
+                <input className="col-sm-10" type="text" name="address2" value={address2} onChange={onChange} />
+              </div>
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="city">City</label>
+                <input className="col-sm-10" type="text" name="city" value={city} onChange={onChange} required />
+              </div>
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="state">State</label>
+                <input className="col-sm-10" type="text" name="state" value={state} onChange={onChange} required />
+              </div>
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="zip">Zip Code</label>
+                <input className="col-sm-10" type="text" name="zip" value={zip} onChange={onChange} required />
+              </div>
+              <CloudinaryUploadWidget cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
+              {/* <div className="form-group row">
+                <label className="col-sm-2" htmlFor="picture">Profile Picture</label>
+                <input className="col-sm-10" type="text" name="picture" value={picture} onChange={onChange} />
+              </div> */}
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="password">Password</label>
+                <input className="col-sm-10" type="password" name="password" value={password} onChange={onChange} required minLength="6" />
+              </div>
+              <div className="form-group row">
+                <label className="col-sm-2" htmlFor="password2">Confirm Password</label>
+                <input className="col-sm-10" type="password" name="password2" value={password2} onChange={onChange} required minLength="6" />
+              </div>
+              <input type="submit" value="REGISTER" className="btn btn-danger btn-block" />
+            </form>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 

@@ -37,10 +37,10 @@ const TopNav = () => {
   const guestLinks = (
     <Fragment>
       <li  className="nav-item">
-        <Link className="nav-link" to="/Register">Register</Link>
+        <Link className="btn btn-outline-danger nav-link" to="/Register">Register</Link>
       </li>
       <li  className="nav-item">
-        <Link className="nav-link" to="/Login">Login</Link>
+        <Link className="btn btn-outline-danger nav-link" to="/Login">Login</Link>
       </li>
     </Fragment>
   )
@@ -78,5 +78,3 @@ const TopNav = () => {
 }
 
 export default TopNav
-
-
