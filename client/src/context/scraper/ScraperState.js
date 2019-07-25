@@ -46,13 +46,19 @@ class ScraperState extends React.Component {
           articles: result,
         })
 
+
+
       });
   };
+
+  componentDidMount(){
+    this.getScrape()
+  }
 
   render() {
     return (
       <div>
-        <button onClick={this.getScrape}>refresh</button>
+        {/* <button onClick={this.getScrape}>refresh</button> */}
         <div className="articles">
         <ul>
           {
