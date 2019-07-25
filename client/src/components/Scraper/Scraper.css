@@ -8,13 +8,41 @@ font-family: 'Michroma', sans-serif; */
 
 .facts{
   border-style: solid;
-  border-color:rgb(44, 104, 255);
-  background: rgba(118, 158, 201, 0.714);
+  border-color:rgb(150, 23, 23);
+  background: rgb(28, 26, 26);
   border-radius: 5px;
+  border-width: 5px;
   box-shadow: 10px 10px 5px grey;
-  font-size: 40px;
+  font-size: 20px;
+  color: white;
+
 }
 
+.factTitle{
+  font-size: 20px;
+  color: goldenrod;
+  font-family: 'Exo', sans-serif;
+}
+
+.factTitle img{
+  height:40px;
+}
+
+.lineBreak{
+  background-color:rgba(218, 165, 32, 0.858);
+  height:5px;
+  border-radius: 20px;
+}
+
+.factText{
+  font-size: 15px;
+  font-family: 'Muli', sans-serif
+}
+
+.articles{
+  font-size:15px;
+  font-family: 'Muli', sans-serif
+}
 /* h1{
   font-size:40px !important;
   color:white;

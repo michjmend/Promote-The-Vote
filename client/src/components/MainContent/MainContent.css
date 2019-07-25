@@ -1,0 +1,16 @@
+.Container{
+  width:100%;
+  height:200%;
+  text-align:center;
+  background: rgb(83, 153, 196);
+  /* -webkit-animation: fadeinout 4s linear forwards; */
+  animation: fadeinout 4s linear forwards;
+  position: absolute;
+  top: -100px;
+  z-index: 999;
+  font-size: 150px;
+  font-family: 'Noticia Text', serif;
+  text-align: center;
+  color:white;
+}
+
