@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Exo|Michroma|Muli|Special+Elite&display=swap');
+
+/* Google Fonts
+font-family: 'Muli', sans-serif;
+font-family: 'Exo', sans-serif;
+font-family: 'Special Elite', cursive;
+font-family: 'Michroma', sans-serif; */
+
 #SideNavbar, .list-group-item {
   background-color: navy;
+  font-family: 'Exo', sans-serif;
 }
