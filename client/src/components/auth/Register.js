@@ -9,13 +9,11 @@ const Register = props => {
   const alertContext = useContext(AlertContext)
   const authContext = useContext(AuthContext)
   const [isSubmitted] = useState(false)
+  // const [cloudinaryUrl, setCloudinaryUrl] = useState("")
 
   const { setAlert } = alertContext
 
   const { register, error, clearErrors, isAuthenticated } = authContext
-
-  let cloudinaryUrl;
-  let source = {}
 
   useEffect(() => {
     if(isAuthenticated) {
@@ -45,7 +43,8 @@ const Register = props => {
   })
 
   const setCloudinaryInfo = (imgUrl) => {
-    cloudinaryUrl = imgUrl;
+    // cloudinaryUrl = imgUrl;
+    setUser({...user, picture: imgUrl})
   };
 
   const { username, firstname, lastname, email, address1, address2, city, state, zip, picture, password, password2 } = user
@@ -73,20 +72,6 @@ const Register = props => {
         picture
       })
     }
-    // if (!cloudinaryUrl) {
-    //   setIsValid(false);
-    //   return;
-    // }
-    // API
-    //   .postInfo({
-    //     picUrl: cloudinaryUrl,
-    //     note: description,
-    //   }, source)
-    //   .then(() => {
-    //     getMediaInfo();
-    //     resetValues();
-    //   })
-    //   .catch(err => console.log(err));
   }
 
   return (
@@ -135,10 +120,10 @@ const Register = props => {
                 <input className="col-sm-10" type="text" name="zip" value={zip} onChange={onChange} required />
               </div>
               <CloudinaryUploadWidget cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
-              {/* <div className="form-group row">
-                <label className="col-sm-2" htmlFor="picture">Profile Picture</label>
-                <input className="col-sm-10" type="text" name="picture" value={picture} onChange={onChange} />
-              </div> */}
+              {/* <div className="form-group row"> */}
+                {/* <label className="col-sm-2" htmlFor="picture">Profile Picture</label> */}
+                {/* <input className="col-sm-10" type="text" name="picture" value={cloudinaryUrl} /> */}
+              {/* </div> */}
               <div className="form-group row">
                 <label className="col-sm-2" htmlFor="password">Password</label>
                 <input className="col-sm-10" type="password" name="password" value={password} onChange={onChange} required minLength="6" />

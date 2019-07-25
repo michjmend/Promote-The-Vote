@@ -10,12 +10,13 @@ import Login from "./components/auth/Login"
 import CreatePost from "../src/components/CreatePost/CreatePost";
 import AlertState from "./context/alert/AlertState"
 import AuthState from "./context/auth/AuthState"
+require("dotenv").config()
 
 // use normal bootstrap if required. give yarn add bootstrap for below...
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = props => {
-
+console.log(process.env.REACT_APP_UPLOAD_CLOUDNAME)
   return (
     <AuthState>
       <AlertState>

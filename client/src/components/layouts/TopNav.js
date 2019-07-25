@@ -39,10 +39,10 @@ const TopNav = () => {
   const guestLinks = (
     <Fragment>
       <li  className="nav-item">
-        <Link className="btn btn-outline-danger nav-link" to="/Register"><i class="fas fa-user-plus"></i> Register</Link>
+        <Link className="btn btn-outline-danger nav-link" to="/Register"><i className="fas fa-user-plus"></i> Register</Link>
       </li>
       <li  className="nav-item">
-        <Link className="btn btn-outline-danger nav-link" to="/Login"><i class="fas fa-user"></i> Login</Link>
+        <Link className="btn btn-outline-danger nav-link" to="/Login"><i className="fas fa-user"></i> Login</Link>
       </li>
     </Fragment>
   )
@@ -54,7 +54,7 @@ const TopNav = () => {
             <Col>
               <nav className="navbar navbar-expand-lg border-bottom">
                 <button className="btn btn-outline-danger" onClick={ toggle } id="menu-toggle">
-                  <i class="fas fa-bars"></i>
+                  <i className="fas fa-bars"></i>
                 </button>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>

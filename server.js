@@ -5,6 +5,7 @@ const app = express()
 const cloudinary = require("./config/cloudinaryConnect")
 const DIST_DIR = path.join(__dirname, './client/build/'); // NEW
 const HTML_FILE = path.join(DIST_DIR, 'index.html'); // NEW
+const cors = require('cors');
 
 // Connect to our database and image api
 const performConnections = async () => { 
@@ -24,6 +25,7 @@ performConnections()
 
 // Init middleware
 app.use(express.json({ extended: false }))
+app.use(cors())
 
 // app.get("/test", (req,res) =>
 //   res.json({ test: "Welcome to the Promote-the-Vote API" })

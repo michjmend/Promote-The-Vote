@@ -41,8 +41,8 @@ const CloudinaryUploadWidget = (props) => {
         cropping: true,
         resourceType: 'image',
         maxFileSize: MAX_IMAGE_SIZE,
-        cloudName: "ddcuspzza", //process.env.REACT_APP_UPLOAD_CLOUDNAME,
-        uploadPreset: "bjzmoozf"   // process.env.REACT_APP_UPLOAD_PRESET,
+        cloudName: process.env.REACT_APP_UPLOAD_CLOUDNAME,
+        uploadPreset: process.env.REACT_APP_UPLOAD_PRESET,
       }, (error, res) => {
         if (error !== undefined) {
           setErrorMsg(error.toString());
@@ -74,7 +74,7 @@ const CloudinaryUploadWidget = (props) => {
       <div>
         <SuccessText>Image Successfully Uploaded</SuccessText>
         <Image
-          cloudName={process.env.REACT_APP_UPLOAD_CLOUDNAME}
+          cloudName={"ddcuspzza"}
           publicId={cloudPublicId}
         >
           <Transformation
@@ -93,7 +93,7 @@ const CloudinaryUploadWidget = (props) => {
       <button
         ref={(button) => { widgetref = button; }}
         type="submit"
-        className="cloudinary-button"
+        className={process.env.REACT_APP_UPLOAD_CLOUDNAME}
         onClick={uploadWidget}
       >
       Upload Profile Pic
