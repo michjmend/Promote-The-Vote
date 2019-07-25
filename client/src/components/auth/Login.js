@@ -46,18 +46,18 @@ const Login = props => {
       <Row>
         <Col>
           <div className="form-container">
-            <h1 className="text-center"><i class="fas fa-user"></i> Login
+            <h1 className="text-center"><i className="fas fa-user"></i> Login
             </h1>
             <Container id="inputs">
               <Row>
                 <Col>
                   <form onSubmit={onSubmit}>
                     <div className="form-group row">
-                      <label className="col-md-12" htmlFor="username"><i class="far fa-envelope"></i> Username</label>
+                      <label className="col-md-12" htmlFor="username"><i className="far fa-envelope"></i> Username</label>
                       <input className="col-md-12" type="username" name="username" value={username} onChange={onChange} required />
                     </div>
                     <div className="form-group row">
-                      <label className="col-md-12" htmlFor="password"><i class="fas fa-lock"></i> Password</label>
+                      <label className="col-md-12" htmlFor="password"><i className="fas fa-lock"></i> Password</label>
                       <input className="col-md-12" type="password" name="password" value={password} onChange={onChange} required />
                     </div>
                     <input type="submit" value="LOGIN" className="loginButton btn btn-danger btn-block" />

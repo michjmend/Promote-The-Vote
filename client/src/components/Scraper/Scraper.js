@@ -6,7 +6,7 @@ import flagcheck from './flagcheck.png';
 import ScraperState from "../../context/scraper/ScraperState";
 // import Article from  "./Article";
 
-export default class Scrapper extends Component {
+export default class Scraper extends Component {
   render() {
     return (
       <div>
@@ -25,3 +25,4 @@ export default class Scrapper extends Component {
     );
   }
 }
+
