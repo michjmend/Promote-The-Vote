@@ -40,46 +40,37 @@ const TopNav = () => {
   const guestLinks = (
     <Fragment>
       <li  className="nav-item">
-        <Link className="btn btn-outline-danger nav-link" to="/Register">Register</Link>
+        <Link className="btn btn-outline-danger nav-link" to="/Register"><i class="fas fa-user-plus"></i> Register</Link>
       </li>
       <li  className="nav-item">
-        <Link className="btn btn-outline-danger nav-link" to="/Login">Login</Link>
+        <Link className="btn btn-outline-danger nav-link" to="/Login"><i class="fas fa-user"></i> Login</Link>
       </li>
     </Fragment>
   )
 
   return (
-    <div>
       <Wrapper>
         <Container fluid="true">
-        <Row>
-          <Col>
-            <nav className="navbar navbar-expand-lg border-bottom">
-              <button className="btn btn-danger" onClick={ toggle } id="menu-toggle">
-                MENU
-              </button>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="rotate-scale-up"><img src={logo} alt ={"logo"}/></div>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-                {isAuthenticated ? authLinks : guestLinks }
-                  {/* <li className="nav-item active">
-                    <Link className="nav-link" href="#">Home <span className="sr-only">(current)</span></Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" href="#">Login</Link>
-                  </li> */}
-                </ul>
-              </div>
-            </nav>
-          </Col>
-
-        </Row>
+          <Row>
+            <Col>
+              <nav className="navbar navbar-expand-lg border-bottom">
+                <button className="btn btn-outline-danger" onClick={ toggle } id="menu-toggle">
+                  <i class="fas fa-bars"></i>
+                </button>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="navbar-toggler-icon"></span>
+                </button>
+                <Link to="/"><div className="rotate-scale-up"><img src={logo} alt ={"logo"}/></div></Link>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                  {isAuthenticated ? authLinks : guestLinks }
+                  </ul>
+                </div>
+              </nav>
+            </Col>
+          </Row>
         </Container>
       </Wrapper>
-    </div>
   )
 }
 
