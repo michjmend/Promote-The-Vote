@@ -41,8 +41,8 @@ const CloudinaryUploadWidget = (props) => {
         cropping: true,
         resourceType: 'image',
         maxFileSize: MAX_IMAGE_SIZE,
-        cloudName: process.env.REACT_APP_UPLOAD_CLOUDNAME,
-        uploadPreset: process.env.REACT_APP_UPLOAD_PRESET,
+        cloudName: "ddcuspzza", //process.env.REACT_APP_UPLOAD_CLOUDNAME,
+        uploadPreset: "bjzmoozf"   // process.env.REACT_APP_UPLOAD_PRESET,
       }, (error, res) => {
         if (error !== undefined) {
           setErrorMsg(error.toString());
