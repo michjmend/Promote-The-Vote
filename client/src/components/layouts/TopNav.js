@@ -11,7 +11,6 @@ import './logo.css';
 
 const TopNav = () => {
   const authContext = useContext(AuthContext)
-  console.log(authContext)
   // const postContext = useContext(PostContext)
   const { logout, user, isAuthenticated } = authContext
 
@@ -27,12 +26,12 @@ const TopNav = () => {
   const authLinks = (
     <Fragment>
       <li>
-        Hello { user && user.firstname }
+        <span>Hello { user && user.firstname } </span>
       </li>
       <li>
         <a onClick={ onLogout } href="#!">
-          <i className="fas fa-sign-out-alt"></i>
-          <span className="hide-sm">Logout</span>
+          <i className="fas fa-sign-out-alt"> </i>
+          <span className="hide-sm"> Logout</span>
         </a>
       </li>
     </Fragment>
@@ -40,10 +39,10 @@ const TopNav = () => {
   const guestLinks = (
     <Fragment>
       <li  className="nav-item">
-        <Link className="btn btn-outline-danger nav-link" to="/Register"><i class="fas fa-user-plus"></i> Register</Link>
+        <Link className="btn btn-outline-danger nav-link" to="/Register"><i className="fas fa-user-plus"></i> Register</Link>
       </li>
       <li  className="nav-item">
-        <Link className="btn btn-outline-danger nav-link" to="/Login"><i class="fas fa-user"></i> Login</Link>
+        <Link className="btn btn-outline-danger nav-link" to="/Login"><i className="fas fa-user"></i> Login</Link>
       </li>
     </Fragment>
   )
@@ -55,7 +54,7 @@ const TopNav = () => {
             <Col>
               <nav className="navbar navbar-expand-lg border-bottom">
                 <button className="btn btn-outline-danger" onClick={ toggle } id="menu-toggle">
-                  <i class="fas fa-bars"></i>
+                  <i className="fas fa-bars"></i>
                 </button>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>

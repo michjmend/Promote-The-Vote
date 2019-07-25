@@ -10,7 +10,7 @@ function SideNavbar() {
     <div id="SideNavbar">
       <div className="border-right" id="sidebar-wrapper">
         {/* <div className="sidebar-heading text-white">INSERT LOGO HERE?</div> */}
-        <Link className="btn btn-danger btn-lg btn-block" to="/post">Post <i class="fas fa-sign-in-alt "></i></Link>
+        <Link className="btn btn-danger btn-lg btn-block" to="/post">Post <i className="fas fa-sign-in-alt "></i></Link>
         <div className="list-group list-group-flush">
           <h4 className="text-white"><u>Resources:</u></h4>
             <a className="list-group-item list-group-item-action" href="https://www.vote.org/am-i-registered-to-vote/?gclid=CjwKCAjw67XpBRBqEiwA5RCoceIDFFk-I4kBVE0THh5h3uIy43Xz0PTnF307YSpg3frm0KyQYtdbIRoCKhYQAvD_BwE" target="_blank">Register: How and Where?</a>

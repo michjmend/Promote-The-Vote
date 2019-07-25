@@ -1,12 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react'
 import AlertContext from "../../context/alert/alertContext"
 import AuthContext from "../../context/auth/authContext"
+import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget"
 import { Container, Row, Col } from "react-bootstrap";
 import './Register.css'
 
 const Register = props => {
   const alertContext = useContext(AlertContext)
   const authContext = useContext(AuthContext)
+  const [isSubmitted] = useState(false)
+  // const [cloudinaryUrl, setCloudinaryUrl] = useState("")
 
   const { setAlert } = alertContext
 
@@ -38,6 +41,11 @@ const Register = props => {
     password2: "",
     picture: "",
   })
+
+  const setCloudinaryInfo = (imgUrl) => {
+    // cloudinaryUrl = imgUrl;
+    setUser({...user, picture: imgUrl})
+  };
 
   const { username, firstname, lastname, email, address1, address2, city, state, zip, picture, password, password2 } = user
 
@@ -111,10 +119,11 @@ const Register = props => {
                 <label className="col-sm-2" htmlFor="zip">Zip Code</label>
                 <input className="col-sm-10" type="text" name="zip" value={zip} onChange={onChange} required />
               </div>
-              <div className="form-group row">
-                <label className="col-sm-2" htmlFor="picture">Profile Picture</label>
-                <input className="col-sm-10" type="text" name="picture" value={picture} onChange={onChange} />
-              </div>
+              <CloudinaryUploadWidget cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
+              {/* <div className="form-group row"> */}
+                {/* <label className="col-sm-2" htmlFor="picture">Profile Picture</label> */}
+                {/* <input className="col-sm-10" type="text" name="picture" value={cloudinaryUrl} /> */}
+              {/* </div> */}
               <div className="form-group row">
                 <label className="col-sm-2" htmlFor="password">Password</label>
                 <input className="col-sm-10" type="password" name="password" value={password} onChange={onChange} required minLength="6" />

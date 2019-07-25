@@ -25,8 +25,8 @@ function MainContent() {
                       <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                       <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                       {/* <Link className="btn btn-outline-danger" to="/">Display Posts</Link> */}
-                      <Link to="/edit/:id" className="btn btn-primary"><i class="fas fa-edit"></i></Link>
-                      <Link to="/delete/:id" className="btn btn-danger"><i class="fas fa-trash-alt"></i></Link>
+                      <Link to="/edit/:id" className="btn btn-primary"><i className="fas fa-edit"></i></Link>
+                      <Link to="/delete/:id" className="btn btn-danger"><i className="fas fa-trash-alt"></i></Link>
                     </div>
                   </div>
 
