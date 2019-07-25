@@ -4,16 +4,17 @@ const connectDB = require("./config/db")
 const app = express()
 const DIST_DIR = path.join(__dirname, './client/build/'); // NEW
 const HTML_FILE = path.join(DIST_DIR, 'index.html'); // NEW
+const cors = require('cors');
 
 // Connect to our database
 connectDB()
 
 // Init middleware
 app.use(express.json({ extended: false }))
-
+app.use(cors())
 // Routes
 app.get("/", (req,res) =>
-  res.json({ msg: "Welcome to the Contact Keeper API" })
+  res.json({ msg: "Promote the Vote API" })
 )
 
 // app.get("/test", (req,res) =>
