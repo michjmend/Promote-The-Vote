@@ -74,7 +74,7 @@ const CloudinaryUploadWidget = (props) => {
       <div>
         <SuccessText>Image Successfully Uploaded</SuccessText>
         <Image
-          cloudName={"ddcuspzza"}
+          cloudName={process.env.REACT_APP_UPLOAD_CLOUDNAME}
           publicId={cloudPublicId}
         >
           <Transformation

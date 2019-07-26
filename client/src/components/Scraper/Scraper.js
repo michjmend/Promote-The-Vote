@@ -15,7 +15,7 @@ export default class Scraper extends Component {
           <div className="factText">
             A Location for individuals to Research the Credibility of
             Politicians in the Media. These articles provided, have
-            been published through <a href="https://www.factcheck.org/">FactCheck.org.</a> For further access to their
+            been published through <a href="https://www.factcheck.org/" target="_blank">FactCheck.org.</a> For further access to their
             archives please visit their website.
             <div className="lineBreak"></div>
           </div>
@@ -25,4 +25,3 @@ export default class Scraper extends Component {
     );
   }
 }
-
