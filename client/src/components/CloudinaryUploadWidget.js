@@ -93,10 +93,10 @@ const CloudinaryUploadWidget = (props) => {
       <button
         ref={(button) => { widgetref = button; }}
         type="submit"
-        className={process.env.REACT_APP_UPLOAD_CLOUDNAME}
+        className="btn btn-outline-secondary btn-lg btn-block text-center"
         onClick={uploadWidget}
       >
-      Upload Profile Pic
+      Browse
       </button>
       {
         errorMsg
