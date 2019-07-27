@@ -63,7 +63,7 @@ class ScraperState extends React.Component {
         <ul>
           {
             this.state.articles.map((article, i ) => {
-              return <li key={i}><a href={article.link}>{article.text}</a></li>
+              return <li key={i}><a href={article.link} target="_blank">{article.text}</a></li>
 
             })
 

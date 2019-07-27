@@ -1,7 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Exo|Michroma|Muli|Special+Elite&display=swap');
+
+/* Google Fonts
+font-family: 'Muli', sans-serif;
+font-family: 'Exo', sans-serif;
+font-family: 'Special Elite', cursive;
+font-family: 'Michroma', sans-serif; */
+
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0);
+  box-shadow: 0 6px 20px 0 rgb(0, 0, 0);
 }
 
 #CreatePostContent {
   padding: 20px;
+}
+
+
+.whatToPost {
+  width: 500px;
+  border: 10px solid red;;
+  padding: 50px;
+  margin: 30px;
+  border-radius: 5px;
+  font-family: 'Muli', sans-serif;
+  font-size: 20px;
+
 }

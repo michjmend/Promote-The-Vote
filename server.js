@@ -8,7 +8,7 @@ const HTML_FILE = path.join(DIST_DIR, 'index.html'); // NEW
 const cors = require('cors');
 
 // Connect to our database and image api
-const performConnections = async () => { 
+const performConnections = async () => {
   try {
     await connectDB()
   } catch (error) {
@@ -27,9 +27,9 @@ performConnections()
 app.use(express.json({ extended: false }))
 app.use(cors())
 
-// app.get("/test", (req,res) =>
-//   res.json({ test: "Welcome to the Promote-the-Vote API" })
-// )
+app.get("/test", (req,res) =>
+  res.json({ test: "Welcome to the Promote-the-Vote API" })
+)
 
 // Routes
 app.get("/", (req,res) =>
