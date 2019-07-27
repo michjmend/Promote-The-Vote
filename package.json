@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "cd client && react-scripts build",
-    "server": "nodemon server.js",
+    "server": "NODE_ENV=development nodemon server.js",
     "client": "cd client && yarn start",
     "clientinstall": "yarn install --prefix client",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
@@ -32,7 +32,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.4",
     "mongoose-type-url": "^1.0.6",
-    "mongos": "^0.0.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react": "^16.8.6",

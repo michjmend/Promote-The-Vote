@@ -41,15 +41,15 @@ app.use("/api/auth", require("./routes/auth"))
 // });
 
 // app.use(router)
-if(process.env.NODE_ENV === "heroku") {
+if(process.env.NODE_ENV === "development") {
+  app.get("/", (req,res) =>
+    res.json({ msg: "Welcome to the Promote the Vote API" })
+  )
+} else {
   app.use(express.static(DIST_DIR)); // NEW
   app.get('/', (req, res) => {
     res.sendFile(HTML_FILE); // EDIT
   });
-} else {
-  app.get("/", (req,res) =>
-    res.json({ msg: "Welcome to the Promote the Vote API" })
-  )
 }
 
 const PORT = process.env.PORT || 5000
