@@ -27,14 +27,12 @@ performConnections()
 app.use(express.json({ extended: false }))
 app.use(cors())
 
-app.get("/test", (req,res) =>
-  res.json({ test: "Welcome to the Promote-the-Vote API" })
-)
+// app.get("/test", (req,res) =>
+//   res.json({ test: "Welcome to the Promote-the-Vote API" })
+// )
 
 // Routes
-app.get("/", (req,res) =>
-  res.json({ msg: "Welcome to the Promote the Vote API" })
-)
+
 app.use("/api/users", require("./routes/users"))
 app.use("/api/auth", require("./routes/auth"))
 // app.use("api/posts", require("./routes/posts"))
@@ -43,11 +41,15 @@ app.use("/api/auth", require("./routes/auth"))
 // });
 
 // app.use(router)
-if(process.env.NODE_ENV === "production") {
-app.use(express.static(DIST_DIR)); // NEW
-app.get('/', (req, res) => {
-  res.sendFile(HTML_FILE); // EDIT
- });
+if(process.env.NODE_ENV === "development") {
+  app.get("/", (req,res) =>
+    res.json({ msg: "Welcome to the Promote the Vote API" })
+  )
+} else {
+  app.use(express.static(DIST_DIR)); // NEW
+  app.get('/', (req, res) => {
+    res.sendFile(HTML_FILE); // EDIT
+  });
 }
 
 const PORT = process.env.PORT || 5000
