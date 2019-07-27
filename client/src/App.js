@@ -8,6 +8,8 @@ import Alerts from "./components/layouts/Alerts"
 import Register from "./components/auth/Register"
 import Login from "./components/auth/Login"
 import CreatePost from "../src/components/CreatePost/CreatePost";
+import Authors from "./components/SideNavbar/Authors/Authors";
+import MissionStatement from "./components/SideNavbar/MissionStatement/MissionStatement";
 import AlertState from "./context/alert/AlertState"
 import AuthState from "./context/auth/AuthState"
 require("dotenv").config()
@@ -28,6 +30,8 @@ console.log(process.env.REACT_APP_UPLOAD_CLOUDNAME)
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/post" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><CreatePost /></div>)} />
+              <Route exact path="/Authors" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><Authors /></div>)} />
+              <Route exact path="/MissionStatement" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><MissionStatement /></div>)} />
             </Switch>
         </Router>
       </AlertState>
