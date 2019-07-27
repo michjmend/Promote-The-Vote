@@ -43,7 +43,7 @@ app.use("/api/auth", require("./routes/auth"))
 // });
 
 // app.use(router)
-if(process.env.NODE_ENV === "production") {
+if(process.env.NODE_ENV === "heroku") {
 app.use(express.static(DIST_DIR)); // NEW
 app.get('/', (req, res) => {
   res.sendFile(HTML_FILE); // EDIT
