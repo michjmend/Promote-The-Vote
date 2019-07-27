@@ -32,9 +32,7 @@ app.use(cors())
 // )
 
 // Routes
-app.get("/", (req,res) =>
-  res.json({ msg: "Welcome to the Promote the Vote API" })
-)
+
 app.use("/api/users", require("./routes/users"))
 app.use("/api/auth", require("./routes/auth"))
 // app.use("api/posts", require("./routes/posts"))
@@ -44,10 +42,14 @@ app.use("/api/auth", require("./routes/auth"))
 
 // app.use(router)
 if(process.env.NODE_ENV === "heroku") {
-app.use(express.static(DIST_DIR)); // NEW
-app.get('/', (req, res) => {
-  res.sendFile(HTML_FILE); // EDIT
- });
+  app.use(express.static(DIST_DIR)); // NEW
+  app.get('/', (req, res) => {
+    res.sendFile(HTML_FILE); // EDIT
+  });
+} else {
+  app.get("/", (req,res) =>
+    res.json({ msg: "Welcome to the Promote the Vote API" })
+  )
 }
 
 const PORT = process.env.PORT || 5000
