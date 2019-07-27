@@ -4,6 +4,7 @@ import AuthContext from "../../context/auth/authContext"
 import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget"
 import { Container, Row, Col } from "react-bootstrap";
 import './Register.css'
+import SelectState from './SelectState/SelectState'
 
 const Register = props => {
   const alertContext = useContext(AlertContext)
@@ -16,15 +17,15 @@ const Register = props => {
   const { register, error, clearErrors, isAuthenticated } = authContext
 
   useEffect(() => {
-    if(isAuthenticated) {
+    if (isAuthenticated) {
       props.history.push("/")
     }
 
-    if(error === "User already exists") {
+    if (error === "User already exists") {
       setAlert(error, "danger")
       clearErrors()
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error, isAuthenticated, props.history])
 
   const [user, setUser] = useState({
@@ -44,7 +45,7 @@ const Register = props => {
 
   const setCloudinaryInfo = (imgUrl) => {
     // cloudinaryUrl = imgUrl;
-    setUser({...user, picture: imgUrl})
+    setUser({ ...user, picture: imgUrl })
   };
 
   const { username, firstname, lastname, email, address1, address2, city, state, zip, picture, password, password2 } = user
@@ -53,7 +54,7 @@ const Register = props => {
 
   const onSubmit = e => {
     e.preventDefault()
-    if(username === "" || firstname === "" || lastname === "" || email === "" || address1 === "" || city === "" || state === "" || zip === "" || password === "") {
+    if (username === "" || firstname === "" || lastname === "" || email === "" || address1 === "" || city === "" || state === "" || zip === "" || password === "") {
       setAlert("Please enter all fields", "danger")
     } else if (password !== password2) {
       setAlert("Passwords do not match", "danger")
@@ -89,17 +90,17 @@ const Register = props => {
               </div>
               <Row>
                 <Col>
-              <div className="form-group row">
-                <label className="col-md-12" htmlFor="firstname">First name:</label>
-                <input className="col-sm-11" type="text" name="firstname" value={firstname} onChange={onChange} required />
-              </div>
-              </Col>
-              <Col>
-              <div className="form-group row">
-                <label className="col-md-12" htmlFor="lastname">Last name:</label>
-                <input className="col-sm-12" type="text" name="lastname" value={lastname} onChange={onChange} required />
-              </div>
-              </Col>
+                  <div className="form-group row">
+                    <label className="col-md-12" htmlFor="firstname">First name:</label>
+                    <input className="col-sm-11" type="text" name="firstname" value={firstname} onChange={onChange} required />
+                  </div>
+                </Col>
+                <Col>
+                  <div className="form-group row">
+                    <label className="col-md-12" htmlFor="lastname">Last name:</label>
+                    <input className="col-sm-12" type="text" name="lastname" value={lastname} onChange={onChange} required />
+                  </div>
+                </Col>
               </Row>
               <div className="form-group row">
                 <label className="col-md-12" htmlFor="email"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/filled-message.png" /> Email:</label>
@@ -107,37 +108,38 @@ const Register = props => {
               </div>
               <Row>
                 <Col>
-              <div className="form-group row">
-                <label className="col-md-12" htmlFor="address1"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/order-delivered.png" /> Address 1:</label>
-                <input className="col-sm-11" type="text" name="address1" value={address1} onChange={onChange} required />
-              </div>
-              </Col>
-              <Col>
-              <div className="form-group row">
-                <label className="col-md-12" htmlFor="address2"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/order-delivered.png" /> Address 2:</label>
-                <input className="col-sm-12" type="text" name="address2" value={address2} onChange={onChange} />
-              </div>
+                  <div className="form-group row">
+                    <label className="col-md-12" htmlFor="address1"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/order-delivered.png" /> Address 1:</label>
+                    <input className="col-sm-11" type="text" name="address1" value={address1} onChange={onChange} required />
+                  </div>
+                </Col>
+                <Col>
+                  <div className="form-group row">
+                    <label className="col-md-12" htmlFor="address2"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/order-delivered.png" /> Address 2:</label>
+                    <input className="col-sm-12" type="text" name="address2" value={address2} onChange={onChange} />
+                  </div>
                 </Col>
               </Row>
               <Row>
                 <Col>
-              <div className="form-group row">
-                <label className="col-md-12" htmlFor="city">City:</label>
-                <input className="col-sm-12" type="text" name="city" value={city} onChange={onChange} required />
-              </div>
-              </Col>
-              <Col>
-              <div className="form-group row">
-                <label className="col-md-12" htmlFor="state">State:</label>
-                <input className="col-sm-12" type="text" name="state" value={state} onChange={onChange} required />
-              </div>
-              </Col>
-              <Col>
-              <div className="form-group row">
-                <label className="col-md-12" htmlFor="zip">Zip Code:</label>
-                <input className="col-sm-12" type="text" name="zip" value={zip} onChange={onChange} required />
-              </div>
-              </Col>
+                  <div className="form-group row">
+                    <label className="col-md-12" htmlFor="city">City:</label>
+                    <input className="col-sm-12" type="text" name="city" value={city} onChange={onChange} required />
+                  </div>
+                </Col>
+                <Col>
+                  <div className="form-group row d-flex align-items-center" style={{ marginLeft: 4  }}>
+                    {/* <label className="col-md-12" htmlFor="state">State:</label> */}
+                    <SelectState />
+                    {/* <input className="col-sm-12" type="text" name="state" value={state} onChange={onChange} required /> */}
+                  </div>
+                </Col>
+                <Col>
+                  <div className="form-group row">
+                    <label className="col-md-12" htmlFor="zip">Zip Code:</label>
+                    <input className="col-sm-12" type="text" name="zip" value={zip} onChange={onChange} required />
+                  </div>
+                </Col>
               </Row>
               <div className="form-group row d-flex justify-content-center">
                 {/* <div className="col-md-3"></div> */}
@@ -145,8 +147,8 @@ const Register = props => {
                 <CloudinaryUploadWidget className="" cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
               </div>
               {/* <div className="form-group row"> */}
-                {/* <label className="col-md-12" htmlFor="picture">Profile Picture:</label> */}
-                {/* <input className="col-sm-12" type="text" name="picture" value={cloudinaryUrl} /> */}
+              {/* <label className="col-md-12" htmlFor="picture">Profile Picture:</label> */}
+              {/* <input className="col-sm-12" type="text" name="picture" value={cloudinaryUrl} /> */}
               {/* </div> */}
               <div className="form-group row">
                 <label className="col-md-12" htmlFor="password"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/password.png" /> Password:</label>
