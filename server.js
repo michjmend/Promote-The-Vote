@@ -32,9 +32,9 @@ app.use(cors())
 // )
 
 // Routes
-// app.get("/", (req,res) =>
-//   res.json({ msg: "Welcome to the Promote the Vote API" })
-// )
+app.get("/", (req,res) =>
+  res.json({ msg: "Welcome to the Promote the Vote API" })
+)
 app.use("/api/users", require("./routes/users"))
 app.use("/api/auth", require("./routes/auth"))
 // app.use("api/posts", require("./routes/posts"))
