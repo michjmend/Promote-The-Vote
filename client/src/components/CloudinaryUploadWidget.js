@@ -74,7 +74,7 @@ const CloudinaryUploadWidget = (props) => {
       <div>
         <SuccessText>Image Successfully Uploaded</SuccessText>
         <Image
-          cloudName={"ddcuspzza"}
+          cloudName={process.env.REACT_APP_UPLOAD_CLOUDNAME}
           publicId={cloudPublicId}
         >
           <Transformation
@@ -93,7 +93,7 @@ const CloudinaryUploadWidget = (props) => {
       <button
         ref={(button) => { widgetref = button; }}
         type="submit"
-        className={process.env.REACT_APP_UPLOAD_CLOUDNAME}
+        className="cloudinary-button"
         onClick={uploadWidget}
       >
       Upload Profile Pic
