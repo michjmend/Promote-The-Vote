@@ -22,10 +22,21 @@ font-family: 'Michroma', sans-serif; */
   margin: 30px;
   border-radius: 5px;
   font-family: 'Muli', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
 
 }
 
 .postTitle {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Michroma', sans-serif;
+  font-size: 40px;
+  color:red;
+}
+
+.postTitle img{
+  height:60px;
+}
+
+.postText{
+  font-size: 15px;
+  font-family: 'Muli', sans-serif;
 }
