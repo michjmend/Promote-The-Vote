@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import window from 'global/window';
 import { Image, Transformation } from 'cloudinary-react';
 
-const MAX_IMAGE_SIZE = 6144000; // Maximum Image Size, around 6MB
+const MAX_IMAGE_SIZE = 61440000; // Maximum Image Size, around 6MB
 
 const SuccessText = styled.div`
   font-size: 115%;
@@ -96,7 +96,7 @@ const CloudinaryUploadWidget = (props) => {
         className="btn btn-outline-secondary btn-lg btn-block text-center"
         onClick={uploadWidget}
       >
-      Browse
+      Upload
       </button>
       {
         errorMsg
