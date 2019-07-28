@@ -47,11 +47,10 @@ const CreatePost = props => {
       <div>
         <div className="card" style={{ marginTop: 20 }}>
           <Container className="postDirection">
-          <div className="postTitle">
+          <div className="postTitle">Post Your Voting Experience
           <img src="https://img.icons8.com/color/48/000000/video.png" alt="videoIcon">
-           </img>
-           <div className="postText">In the last Presidential Election eligible voter turnout for 2016 had low results.The US Census rates and FairVote.org reports national estimates of voter turnouts to read about 60.1% of eligible voters participated in the previous election, but we are on the move up. Pew Research Center reports voter turnout rate increased across racial and ethnic groups, with an increase of 11.7% White, 10.6% Black, 13.4% Hispanic, and 13.3% Asian voters participating in 2018 midterm election. Have you voted? Spread your story, Promote the Vote!
-           </div>
+           </img></div>
+           <div className="postText">In the last Presidential Election eligible voter turnout for 2016 had low results.The US Census rates and FairVote.org reports national estimates of voter turnouts to read about 60.1% of eligible voters participated in the previous presidential election; but we are on the move up. Pew Research Center reports voter turnout rate increased across racial and ethnic groups, with an increase of 11.7% White, 10.6% Black, 13.4% Hispanic, and 13.3% Asian voters participating in 2018 midterm election. Have you voted? Spread your story, Promote the Vote!
            </div>
           </Container>
         </div>
