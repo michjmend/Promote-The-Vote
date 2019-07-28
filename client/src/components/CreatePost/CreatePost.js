@@ -1,60 +1,48 @@
-import React, { Component } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import AlertContext from "../../context/alert/alertContext"
+import AuthContext from "../../context/auth/authContext"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CreatePost.css";
 
-class CreatePost extends Component {
-  constructor(props) {
-    super();
+const CreatePost = props => {
+  const alertContext = useContext(AlertContext)
+  const authContext = useContext(AuthContext)
+  const [isSubmitted] = useState(false)
+  const { setAlert } = alertContext
+  const { isAuthenticated } = authContext
 
-    this.onChangePostTitle = this.onChangePostTitle.bind(this);
-    this.onChangePostReview = this.onChangePostReview.bind(this);
-    this.onChangePostPicture = this.onChangePostPicture.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+  useEffect(() => {
+    if(isAuthenticated) {
+      props.history.push("/")
+    }
+  }, [isAuthenticated, props.history])
 
-    this.state = {
-      title: "",
-      review: "",
-      picture: ""
-    };
+  const [post, setPost] = useState({
+    title: "",
+    story: "",
+    video: ""
+  })
+  
+  const setCloudinaryInfo = (imgUrl) => {
+    setPost({ ...post, video: imgUrl })
+  };
+
+  const { title, story, video } = post
+
+  const onChange = e => setPost({ ...post, [e.target.name]: e.target.value })
+
+  const onSubmit = e => {
+    e.preventDefault()
+    post({
+      title,
+      story,
+      video
+    })
   }
 
-  onChangePostTitle(e) {
-    this.setState({
-      title: e.target.value
-    });
-  }
-
-  onChangePostReview(e) {
-    this.setState({
-      review: e.target.value
-    });
-  }
-
-  onChangePostPicture(e) {
-    this.setState({
-      picture: e.target.value
-    });
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
-
-    /// apply submit logic here
-    console.log("Form Submitted");
-    console.log("Title : ${this.state.title}");
-    console.log("Review : ${this.state.review}");
-    console.log("Picture URL : ${this.state.picture}");
-
-    this.setState({
-      title: "",
-      review: "",
-      picture: ""
-    });
-  }
-
-  render() {
     return (
       <div>
         <div className="card" style={{ marginTop: 20 }}>
@@ -81,66 +69,29 @@ class CreatePost extends Component {
               </Col>
               <Col>
                 <h3 className="text-center">Post</h3>
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={onSubmit}>
                   <div className="form-group">
                     <label>Title:</label>
                     <input
                       type="text"
                       className="form-control"
-                      value={this.state.title}
-                      onChange={this.onChangePostTitle}
+                      value={title}
+                      onChange={onChange}
                     />
                   </div>
                   <div className="form-group">
                     <label>Story:</label>
                     <textarea
                       className="form-control"
-                      value={this.state.review}
-                      onChange={this.onChangePostReview}
+                      value={story}
+                      onChange={onChange}
                       rows="3"
                     />
-                    {/* <input type="text"
-                            className="form-control"
-                            value={this.state.review}
-                            onChange={this.onChangePostReview}
-                            /> */}
                   </div>
-                  <div className="form-group">
-                    <label>Picture:</label>
-                    <div class="input-group mb-3">
-                      <div className="custom-file">
-                        <input
-                          type="file"
-                          className="custom-file-input"
-                          id="inputGroupFile02"
-                          value={this.state.picture}
-                          onChange={this.onChangePostPicture}
-                        />
-                        <label
-                          className="custom-file-label"
-                          for="inputGroupFile02"
-                          aria-describedby="inputGroupFileAddon02"
-                        >
-                          Choose file
-                        </label>
-                      </div>
-                      <div className="input-group-append">
-                        <span
-                          className="input-group-text"
-                          id="inputGroupFileAddon02"
-                        >
-                          Upload
-                        </span>
-                      </div>
-                    </div>
-                    {/* <label>Picture:</label>
-                        <input type="text"
-                            className="form-control"
-                            value={this.state.picture}
-                            onChange={this.onChangePostPicture}
-                        /> */}
+                  <div className="row d-flex justify-content-center">
+                    <label className="" htmlFor="photo"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/add-image.png" /> Upload Video Story:</label>
+                    <CloudinaryUploadWidget className="" cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
                   </div>
-
                   <div className="form-group">
                     <input
                       type="submit"
@@ -156,5 +107,4 @@ class CreatePost extends Component {
       </div>
     );
   }
-}
 export default CreatePost;
