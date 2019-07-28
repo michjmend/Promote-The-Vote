@@ -7,7 +7,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import AuthContext from "../../context/auth/authContext"
 import $ from 'jquery';
 import './logo.css';
-import rh10 from './rh10.png';
+import justTJ2 from './justTJ2.png';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // import PostContext from "../../context/post/postContext"
@@ -63,7 +63,7 @@ const TopNav = () => {
                   <span className="navbar-toggler-icon"></span>
                 </button>
                 <Link to="/"><div className="rotate-scale-up logo"><img src={logo} alt ={"logo"}/></div></Link>
-                <div ClassName= "raisedHands"><img src={rh10} alt ="raisedHands" width= "100%"></img></div>
+                <div ClassName= "raisedHands"><img src={justTJ2} alt ="raisedHands" width= "100%"></img></div>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
