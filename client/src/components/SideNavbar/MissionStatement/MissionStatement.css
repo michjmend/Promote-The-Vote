@@ -1,0 +1,27 @@
+.MissionStatement {
+  padding: 10px;
+}
+
+.icon {
+  max-height: 35px;
+}
+
+.fa-flag-usa {
+  color: red;;
+}
+
+.navyWord {
+  color: navy;
+}
+
+.blue {
+  background-color: navy;
+  color: white;
+  padding: 10px;
+}
+
+.red {
+  background-color: red;
+  color: white;
+  padding: 10px;
+}

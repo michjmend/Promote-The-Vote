@@ -11,7 +11,7 @@ class Authors extends Component {
         <Row>
           <Col>
             <div className="Authors card">
-              <h1 className="text-center">Contributors</h1>
+              <h1 className="text-center">Authors</h1>
               <p>
                 Hello, America! We are extremely proud of our project and have worked hard for all you voters out there to find your way to the polls! We want your voice to be heard.
               </p>
