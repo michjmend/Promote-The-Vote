@@ -9,4 +9,11 @@ font-family: 'Michroma', sans-serif; */
 #SideNavbar, .list-group-item {
   background-color: navy;
   font-family: 'Exo', sans-serif;
+  color: white;
 }
+
+.sidebartitle {
+  color: darkgoldenrod;
+  font-weight: bold;
+}
+

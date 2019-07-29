@@ -25,7 +25,7 @@ const CreatePost = props => {
     story: "",
     video: ""
   })
-  
+
   const setCloudinaryInfo = (imgUrl) => {
     setPost({ ...post, video: imgUrl })
   };
@@ -45,7 +45,7 @@ const CreatePost = props => {
 
     return (
       <div>
-        <div className="card" style={{ marginTop: 20 }}>
+        <div className="card">
           <Container className="postDirection">
           <div className="postTitle">Post Your Voting Experience
           <img src="https://img.icons8.com/color/48/000000/video.png" alt="videoIcon">
