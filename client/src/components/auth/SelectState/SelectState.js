@@ -15,9 +15,11 @@ class SelectState extends Component {
 
   render() {
     return (
+      <div ClassName="states">
       <p>
-        State: <SelectUSState id="myId" className="myClassName d-flex align-items-center" onChange={this.setNewValue}/>
-      </p>
+        State: </p>
+        <SelectUSState id="myId" className="myClassName d-flex align-items-center" onChange={this.setNewValue}/>
+      </div>
     );
   }
 }
