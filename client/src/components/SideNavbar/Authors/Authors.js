@@ -13,10 +13,10 @@ class Authors extends Component {
             <div className="Authors card">
               <h1 className="text-center">Authors</h1>
               <p>
-                Hello, America! We are extremely proud of our project and have worked hard for all you voters out there to find your way to the polls! We want your voice to be heard.
+                Hey America, we are extremely proud of our Promote the Vote project. We have worked hard to help encourage all eligible voter find their way to the polls! We want your voice to be heard.
               </p>
               <p>
-                Below are all who contributed to Promote-The-Vote. <img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/usa.png"></img> Feedback is welcomed on our gitHub page <i class="fas fa-arrow-right"></i><a href="https://github.com/michjmend/Promote-The-Vote" alt="promote the vote github"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/github.png" /></a> Thank you for visiting!
+                Below are all who contributed to Promote the Vote. <img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/usa.png"></img> Feedback is welcomed on our gitHub page <i class="fas fa-arrow-right"></i><a target="_blank" href="https://github.com/michjmend/Promote-The-Vote" alt="promote the vote github"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/github.png" /></a> Thank you for visiting!
               </p>
               <Row>
                 <Col>

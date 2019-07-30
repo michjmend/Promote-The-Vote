@@ -89,7 +89,7 @@ const CreatePost = props => {
                     />
                   </div>
                   <div className="row d-flex justify-content-center">
-                    <label className="" htmlFor="photo"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/add-image.png" /> Upload Video Story:</label>
+                    <label className="videoStory" htmlFor="photo"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/add-image.png" /> Video Story: </label>
                     <CloudinaryUploadWidget className="" cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
                   </div>
                   <div className="form-group">
