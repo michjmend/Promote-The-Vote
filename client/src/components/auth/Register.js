@@ -129,9 +129,9 @@ const Register = props => {
                 </Col>
                 <Col>
                   <div className="form-group row d-flex align-items-center" style={{ marginLeft: 4  }}>
-                    {/* <label className="col-md-12" htmlFor="state">State:</label> */}
-                    <SelectState />
-                    {/* <input className="col-sm-12" type="text" name="state" value={state} onChange={onChange} required /> */}
+                    <label className="col-md-12" htmlFor="state">State:</label>
+                    {/* <SelectState /> */}
+                    <input className="col-sm-12" type="text" name="state" value={state} onChange={onChange} required />
                   </div>
                 </Col>
                 <Col>
@@ -143,7 +143,7 @@ const Register = props => {
               </Row>
               <div className="form-group row d-flex justify-content-center">
                 {/* <div className="col-md-3"></div> */}
-                <label className="profilePic" htmlFor="photo"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/add-image.png" /> Upload Profile Picture:</label>
+                <label className="profilePic" htmlFor="photo"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/add-image.png" /> Profile Picture:</label>
                 <CloudinaryUploadWidget className="" cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
               </div>
               {/* <div className="form-group row"> */}
