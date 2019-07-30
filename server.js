@@ -8,7 +8,7 @@ const HTML_FILE = path.join(DIST_DIR, 'index.html'); // NEW
 const cors = require('cors');
 
 // Connect to our database and image api
-const performConnections = async () => { 
+const performConnections = async () => {
   try {
     await connectDB()
   } catch (error) {
@@ -32,9 +32,7 @@ app.use(cors())
 // )
 
 // Routes
-app.get("/", (req,res) =>
-  res.json({ msg: "Welcome to the Promote the Vote API" })
-)
+
 app.use("/api/users", require("./routes/users"))
 app.use("/api/auth", require("./routes/auth"))
 // app.use("api/posts", require("./routes/posts"))
@@ -43,11 +41,15 @@ app.use("/api/auth", require("./routes/auth"))
 // });
 
 // app.use(router)
-if(process.env.NODE_ENV === "production") {
-app.use(express.static(DIST_DIR)); // NEW
-app.get('/', (req, res) => {
-  res.sendFile(HTML_FILE); // EDIT
- });
+if(process.env.NODE_ENV === "development") {
+  app.get("/", (req,res) =>
+    res.json({ msg: "Welcome to the Promote the Vote API" })
+  )
+} else {
+  app.use(express.static(DIST_DIR)); // NEW
+  app.get('/', (req, res) => {
+    res.sendFile(HTML_FILE); // EDIT
+  });
 }
 
 const PORT = process.env.PORT || 5000

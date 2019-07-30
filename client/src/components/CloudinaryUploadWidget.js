@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import window from 'global/window';
 import { Image, Transformation } from 'cloudinary-react';
 
-const MAX_IMAGE_SIZE = 6144000; // Maximum Image Size, around 6MB
+const MAX_IMAGE_SIZE = 61440000; // Maximum Image Size, around 6MB
 
 const SuccessText = styled.div`
   font-size: 115%;
@@ -74,7 +74,7 @@ const CloudinaryUploadWidget = (props) => {
       <div>
         <SuccessText>Image Successfully Uploaded</SuccessText>
         <Image
-        cloudName={process.env.REACT_APP_UPLOAD_CLOUDNAME}
+          cloudName={process.env.REACT_APP_UPLOAD_CLOUDNAME}
           publicId={cloudPublicId}
         >
           <Transformation
@@ -93,10 +93,10 @@ const CloudinaryUploadWidget = (props) => {
       <button
         ref={(button) => { widgetref = button; }}
         type="submit"
-        className={process.env.REACT_APP_UPLOAD_CLOUDNAME}
+        className="btn btn-outline-secondary btn-lg btn-block text-center"
         onClick={uploadWidget}
       >
-      Upload Profile Pic
+      Upload
       </button>
       {
         errorMsg

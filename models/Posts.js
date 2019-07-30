@@ -9,13 +9,13 @@ const PostsSchema = new Schema({
       type: String,
       required: true
     },
-    review: {
+    story: {
       type: String,
       required: true
     },
-    picture: {
-      type: String,
-      required: false
+    video: {
+      type: Url,
+      default: "https://via.placeholder.com/200x200"
     },
     user: {
       type: Schema.Types.ObjectId,
