@@ -60,12 +60,12 @@ Almost 92 million eligible Americans did not vote in the 2016 presidential elect
   * What is the primary goal of the product?
       This application will provide a platform for actual, US citizens to communicate with others about why they vote and believe that voting is important
 
-<!-- ## Flowchart
-![Screenshot](./public/img/FlowChartPic.png)
+## Flowchart
+![Screenshot](./FlowChart.png)
 
 ## ER Diagram
 Used Star Schema for Database design
-![Screenshot](./public/img/ERdiagram.png) -->
+![Screenshot](./ERdiagram.png)
 
 ## Overview of the Intended Application:
 * To increase voter engagement at a local level, the app should at a minimum:
