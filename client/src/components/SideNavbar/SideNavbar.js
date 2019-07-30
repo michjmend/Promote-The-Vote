@@ -1,17 +1,31 @@
-import React from "react";
+import React, { Fragment, useContext } from "react";
 import {BrowserRouter as Router, Route, Link } from "react-router-dom";
-import CreatePost from "../CreatePost/CreatePost";
 import { Container, Row, Col } from "react-bootstrap";
+import AuthContext from "../../context/auth/authContext"
+
 import 'bootstrap/dist/css/bootstrap.css';
 import './SideNavbar.css';
 import './simple-sidebar.css';
 
 function SideNavbar() {
+  const authContext = useContext(AuthContext)
+  const { isAuthenticated } = authContext
+  
+  const postbutton = (
+    <Link className="btn btn-danger btn-lg btn-block" to="/post">Post <i className="fas fa-sign-in-alt "></i></Link>
+  )
+
+  const noPost = (
+    <Fragment>
+      <p></p>
+    </Fragment>
+  )
   return (
     <div id="SideNavbar">
       <div className="border-right" id="sidebar-wrapper">
         {/* <div className="sidebar-heading text-white">INSERT LOGO HERE?</div> */}
-        <Link className="btn btn-danger btn-lg btn-block" to="/post">Post <i className="fas fa-sign-in-alt "></i></Link>
+        {/* <Link className="btn btn-danger btn-lg btn-block" to="/post">Post <i className="fas fa-sign-in-alt "></i></Link> */}
+        {isAuthenticated ? postbutton : noPost }
         <div className="list-group list-group-flush">
           <h5 className="sidebartitle"><u>Resources:</u></h5>
             <a className="list-group-item list-group-item-action" href="https://www.vote.org/am-i-registered-to-vote/?gclid=CjwKCAjw67XpBRBqEiwA5RCoceIDFFk-I4kBVE0THh5h3uIy43Xz0PTnF307YSpg3frm0KyQYtdbIRoCKhYQAvD_BwE" target="_blank">Register: How and Where?</a>

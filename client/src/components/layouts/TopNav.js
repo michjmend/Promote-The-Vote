@@ -8,11 +8,15 @@ import AuthContext from "../../context/auth/authContext"
 import $ from 'jquery';
 import './logo.css';
 import justTJ2 from './justTJ2.png';
+//import { withRouter } from "react-router-dom"
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // import PostContext from "../../context/post/postContext"
 
-const TopNav = () => {
+const TopNav = (props) => {
+  // const locationGetter = withRouter(props => <toggleButton {...props}/>)
+  // console.log(locationGetter)
+  // console.log("Window thing", window.location.pathname)
   const authContext = useContext(AuthContext)
   // const postContext = useContext(PostContext)
   const { logout, user, isAuthenticated } = authContext
@@ -49,16 +53,29 @@ const TopNav = () => {
       </li>
     </Fragment>
   )
+  const toggleButton = (
+    <Fragment>
+      <button className="btn btn-danger menu-toggle" onClick={ toggle } id="menu-toggle">
+        <i className="fas fa-bars"></i>
+      </button>
+    </Fragment>
+  )
 
+  const noToggle = (
+    <Fragment>
+      <p></p>
+    </Fragment>
+  )
   return (
       <Wrapper>
         <Container fluid="true">
           <Row>
             <Col>
               <nav className="navbar navbar-expand-lg border-bottom">
-                <button className="btn btn-danger menu-toggle" onClick={ toggle } id="menu-toggle">
+                {window.location.pathname === "/" ? toggleButton : noToggle}
+                {/* <button className="btn btn-danger menu-toggle" onClick={ toggle } id="menu-toggle">
                   <i className="fas fa-bars"></i>
-                </button>
+                </button> */}
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
                 </button>

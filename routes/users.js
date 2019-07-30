@@ -26,14 +26,12 @@ router.post("/", [
   check("address1", "Please enter your street address")
     .not()
     .isEmpty(),
-  check("state", "Please enter your state")
-    .not()
-    .isEmpty(),
   check("zip", "Please enter your zipcode")
     .not()
     .isEmpty(),
 ],
 async (req,res) => {
+  console.log("pinkus")
   const errors = validationResult(req)
   if(!errors.isEmpty()){
     return res.status(400).json({ errors: errors.array() })
