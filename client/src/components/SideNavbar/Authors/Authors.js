@@ -82,7 +82,7 @@ class Authors extends Component {
                       <h3>Sushmita Yande</h3>
                       <Row>
                         <Col>
-                          Portfolio: <a className="contactLink" target="_blank" href="#"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/moleskine.png" /></a>
+                          Portfolio: <a className="contactLink" target="_blank" href="https://fullstack-sy.github.io/Portfolio/."><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/moleskine.png" /></a>
                         </Col>
                         <Col>
                           Resume: <a className="contactLink" target="_blank" href="#"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/resume.png" /></a>
@@ -91,11 +91,11 @@ class Authors extends Component {
                       <Row>
                         <Col>
                           Contact:
-                            <a className="contactLink" href="mailto:michjmend@gmail.com"><i class="far fa-envelope"></i></a>
-                            <a className="contactLink" target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a className="contactLink" href="mailto:sushmitayande@gmail.com"><i class="far fa-envelope"></i></a>
+                            <a className="contactLink" target="_blank" href="https://www.linkedin.com/in/sushmita-yande-53bbb817b/"><i class="fab fa-linkedin-in"></i></a>
                             <a className="contactLink" target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
                             <a className="contactLink" target="_blank" href="#"><i class="fab fa-instagram"></i></a>
-                            <a className="contactLink" target="_blank" href="#"><i class="fab fa-github"></i></a>
+                            <a className="contactLink" target="_blank" href="https://github.com/FULLSTACK-SY"><i class="fab fa-github"></i></a>
                         </Col>
                       </Row>
                     </Col>
