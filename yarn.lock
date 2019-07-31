@@ -2337,13 +2337,6 @@ bson@^1.1.1, bson@~1.1.1:
   resolved "https://registry.yarnpkg.com/bson/-/bson-1.1.1.tgz#4330f5e99104c4e751e7351859e2d408279f2f13"
   integrity sha512-jCGVYLoYMHDkOsbwJZBCqwMHyH4c+wzgI9hG7Z6SZJRXWr+x58pdIbm2i9a/jFGCkRJqRUr8eoI7lDWa0hTkxg==
 
-bson@~0.2:
-  version "0.2.22"
-  resolved "https://registry.yarnpkg.com/bson/-/bson-0.2.22.tgz#fcda103f26d0c074d5a52d50927db80fd02b4b39"
-  integrity sha1-/NoQPybQwHTVpS1Qkn24D9ArSzk=
-  dependencies:
-    nan "~1.8"
-
 buffer-equal-constant-time@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
@@ -6181,13 +6174,6 @@ kareem@2.3.0:
   resolved "https://registry.yarnpkg.com/kareem/-/kareem-2.3.0.tgz#ef33c42e9024dce511eeaf440cd684f3af1fc769"
   integrity sha512-6hHxsp9e6zQU8nXsP+02HGWXwTkOEw6IROhF2ZA28cYbUk4eJ6QbtZvdqZOdD9YPKghG3apk5eOCvs+tLl3lRg==
 
-kerberos@0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/kerberos/-/kerberos-0.0.11.tgz#cb29891c21c22ac195f3140b97dd12204fea7dc2"
-  integrity sha1-yymJHCHCKsGV8xQLl90SIE/qfcI=
-  dependencies:
-    nan "~1.8"
-
 keycode@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.2.0.tgz#3d0af56dc7b8b8e5cba8d0a97f107204eec22b04"
@@ -6776,16 +6762,6 @@ mongodb@3.2.7:
     mongodb-core "3.2.7"
     safe-buffer "^5.1.2"
 
-mongodb@^1.4.3:
-  version "1.4.40"
-  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-1.4.40.tgz#cfd80b74fdf0fa053f2ccfb5f49c47ca32a38efb"
-  integrity sha1-z9gLdP3w+gU/LM+19JxHyjKjjvs=
-  dependencies:
-    bson "~0.2"
-  optionalDependencies:
-    kerberos "0.0.11"
-    readable-stream latest
-
 mongoose-legacy-pluralize@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
@@ -6817,13 +6793,6 @@ mongoose@^5.6.4:
     safe-buffer "5.1.2"
     sift "7.0.1"
     sliced "1.0.1"
-
-mongos@^0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/mongos/-/mongos-0.0.0.tgz#0e84da311ebaf44eee82b2b31b70e3ea888a57db"
-  integrity sha1-DoTaMR669E7ugrKzG3Dj6oiKV9s=
-  dependencies:
-    mongodb "^1.4.3"
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -6890,11 +6859,6 @@ nan@^2.12.1:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
-
-nan@~1.8:
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-1.8.4.tgz#3c76b5382eab33e44b758d2813ca9d92e9342f34"
-  integrity sha1-PHa1OC6rM+RLdY0oE8qdkuk0LzQ=
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -8917,7 +8881,7 @@ read-pkg@^4.0.1:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@^3.0.6, readable-stream@^3.1.1, readable-stream@latest:
+readable-stream@^3.0.6, readable-stream@^3.1.1:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.4.0.tgz#a51c26754658e0a3c21dbf59163bd45ba6f447fc"
   integrity sha512-jItXPLmrSR8jmTRmRWJXCnGJsfy85mB3Wd/uINMXA65yrnFo0cPClFIUWzo2najVNSl+mx7/4W8ttlLWJe99pQ==
