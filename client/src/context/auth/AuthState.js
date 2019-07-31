@@ -50,6 +50,7 @@ const AuthState = props => {
       }
     }
     try {
+      console.log("post route")
       const res = await axios.post("/api/users", formData, config)
       dispatch({
         type: REGISTER_SUCCESS,

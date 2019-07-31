@@ -50,7 +50,6 @@ const UserSchema = new Schema({
 
     state: {
       type: String,
-      required: true
     },
 
     zip: {

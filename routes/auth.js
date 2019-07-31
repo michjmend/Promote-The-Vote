@@ -28,8 +28,10 @@ router.post("/",
     check("password", "Password is required").exists()
   ],
   async (req,res) => {
+    console.log("da post route")
     const errors = validationResult(req)
     if(!errors.isEmpty()){
+      console.log("there are errors")
       return res.status(400).json({ errors: errors.array() })
   }
   const { username, password } = req.body
@@ -49,7 +51,7 @@ router.post("/",
       }
     }
     jwt.sign(payload, config.get("jwtSecret"), {
-      expiresIn: 360000
+      expiresIn: 36000
     }, (err, token) => {
       if(err) throw err
       res.json({ token })

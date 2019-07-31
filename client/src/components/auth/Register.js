@@ -40,7 +40,7 @@ const Register = props => {
     zip: "",
     password: "",
     password2: "",
-    picture: "",
+    picture: "https://via.placeholder.com/200x200",
   })
 
   const setCloudinaryInfo = (imgUrl) => {
@@ -54,7 +54,7 @@ const Register = props => {
 
   const onSubmit = e => {
     e.preventDefault()
-    if (username === "" || firstname === "" || lastname === "" || email === "" || address1 === "" || city === "" || state === "" || zip === "" || password === "") {
+    if (username === "" || firstname === "" || lastname === "" || email === "" || address1 === "" || city === "" || zip === "" || password === "") {
       setAlert("Please enter all fields", "danger")
     } else if (password !== password2) {
       setAlert("Passwords do not match", "danger")
