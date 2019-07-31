@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import MM from '../../../components/SideNavbar/Authors/MM.png';
 import SY from '../../../components/SideNavbar/Authors/SY.jpg';
+import KD from '../../../components/SideNavbar/Authors/KD.png';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './Authors.css';
 class Authors extends Component {
@@ -49,26 +50,28 @@ class Authors extends Component {
                   </Row>
                   <Row>
                     <Col md={3}>
-                      {/* <img className="Photo" src={} alt="KD pic" /> */}
+                      <img className="Photo" src={KD} alt="KD pic" />
                     </Col>
                     <Col md={9}>
                       <h3>Kristen De La Rosa</h3>
                       <Row>
                         <Col>
-                          Portfolio: <a className="contactLink" target="_blank" href="#"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/moleskine.png" /></a>
+                          Portfolio: <a className="contactLink" target="_blank" href="https://kristendlr.github.io/updatedPortfolio/"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/moleskine.png" /></a>
                         </Col>
                         <Col>
-                          Resume: <a className="contactLink" target="_blank" href="#"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/resume.png" /></a>
+                          Resume: <a className="contactLink" target="_blank" href="
+https://dochub.com/kristendelarosac13285b8/a9E12P/web-dev-k-de-la-rosa-resume-2-pdf?dt=Tosz6W5kzwxtZqgUUX9s
+"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/resume.png" /></a>
                         </Col>
                       </Row>
                       <Row>
                         <Col>
                           Contact:
-                            <a className="contactLink" href="mailto:michjmend@gmail.com"><i class="far fa-envelope"></i></a>
-                            <a className="contactLink" target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a className="contactLink" target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a className="contactLink" target="_blank" href="#"><i class="fab fa-instagram"></i></a>
-                            <a className="contactLink" target="_blank" href="#"><i class="fab fa-github"></i></a>
+                            <a className="contactLink" href="mailto:delarosa.kristen@gmail.com"><i class="far fa-envelope"></i></a>
+                            <a className="contactLink" target="_blank" href="https://www.linkedin.com/in/kris10-de-la-rosa/"><i class="fab fa-linkedin-in"></i></a>
+                            {/* <a className="contactLink" target="_blank" href="#"><i class="fab fa-facebook-f"></i></a> */}
+                            {/* <a className="contactLink" target="_blank" href="#"><i class="fab fa-instagram"></i></a> */}
+                            <a className="contactLink" target="_blank" href="https://github.com/KristenDLR"><i class="fab fa-github"></i></a>
                         </Col>
                       </Row>
                     </Col>
