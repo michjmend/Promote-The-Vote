@@ -17,13 +17,13 @@ class MissionStatement extends Component {
               </div>
               <div className="missionContent card">
                 <p>
-                  Almost 92 million eligible Americans did not vote in the 2016 presidential elections. In the 2014 midterm elections, an estimated 143 million eligible Americans failed to vote, marking the lowest voter participation in 72 years. For the nation’s democracy to function properly and for government to provide fair representation, all eligible Americans must have the opportunity to vote—and be encouraged to do so. Our collective self-rule is established and fostered through free, fair, accessible, and secure elections through which the voice of every eligible American is heard.
+                 Financial Times records total voting age population at 245.5 million people. 157.6 million Americans are registered to vote, but the turnout for the November 2016 election only accounted 136.8 million votes.
                 </p>
                 <p>
-                  This application will provide a platform for actual, US citizens to communicate with others about why they vote and believe that voting is important.
+                  This application was created to provide a platform for  US citizens to communicate with others about why they vote and how they better prepare themselves.
                 </p>
                 <p>
-                  For someone feeling disenfranchised from our system, like their vote doesn’t matter, they can go to this site to communicate with other people in a similar state of mind, and also share their story. At the site, verifiably registered voters will be able to find resources that will help them vote. Those that are not registered will be provided with resources that will either allow them to register online if applicable, or give them appropriate forms and direct them where to go to register. This app will be moderated to provide as judgment free as possible environment for social interaction around our democracy.
+                  We hope to better prepare individuals that feel disenfranchised from our system, or are concerned their vote doesn’t matter. We hope this site helps citizens to communicate the importance of voting in our democracy and provide the opportunity to share their story. At the site, voters will be able to find resources and better prepare themselves in the voting experience. This app will be moderated to provide as judgment free as possible environment for social interaction around our democracy.
                 </p>
               </div>
             </div>
