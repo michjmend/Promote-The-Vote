@@ -26,6 +26,9 @@ class MissionStatement extends Component {
                   We hope to better prepare individuals that feel disenfranchised from our system, or are concerned their vote doesn’t matter. We hope this site helps citizens to communicate the importance of voting in our democracy and provide the opportunity to share their story. At the site, voters will be able to find resources and better prepare themselves in the voting experience. This app will be moderated to provide as judgment free as possible environment for social interaction around our democracy.
                 </p>
               </div>
+              <div className="video">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/9-IgaqXjl24" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
             </div>
           </Col>
         </Row>
