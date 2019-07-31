@@ -10,6 +10,7 @@ class SelectState extends Component {
   }
 
   setNewValue(newValue) {
+    this.props.handler(newValue);
     console.log('this is the State code:' + newValue);
   }
 

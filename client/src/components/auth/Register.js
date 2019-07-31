@@ -4,7 +4,7 @@ import AuthContext from "../../context/auth/authContext"
 import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget"
 import { Container, Row, Col } from "react-bootstrap";
 import './Register.css'
-import SelectState from './SelectState/SelectState'
+// import SelectState from './SelectState/SelectState'
 
 const Register = props => {
   const alertContext = useContext(AlertContext)
@@ -46,6 +46,11 @@ const Register = props => {
   const setCloudinaryInfo = (imgUrl) => {
     // cloudinaryUrl = imgUrl;
     setUser({ ...user, picture: imgUrl })
+  };
+
+  const stateHandler = (state) => {
+    console.log("handlerHit");
+    setUser({ state: state })
   };
 
   const { username, firstname, lastname, email, address1, address2, city, state, zip, picture, password, password2 } = user
@@ -127,11 +132,11 @@ const Register = props => {
                     <input className="col-sm-12" type="text" name="city" value={city} onChange={onChange} required />
                   </div>
                 </Col>
-                <Col>
-                  <div className="form-group row d-flex align-items-center" style={{ marginLeft: 4  }}>
-                    <label className="col-md-12" htmlFor="state">State:</label>
-                    {/* <SelectState /> */}
-                    <input className="col-sm-12" type="text" name="state" value={state} onChange={onChange} required />
+                <Col className="d-flex align-items-center">
+                  <div className="form-group row d-flex align-items-center" style={{ display: 'flex', justifyContent: 'center' }}>
+                    <label className="text-center col-md-12" htmlFor="state">State: (abbreviated)</label>
+                    {/* <SelectState handler={ stateHandler } /> */}
+                    <input className="col-sm-3" type="text" name="state" value={state} onChange={onChange} required />
                   </div>
                 </Col>
                 <Col>

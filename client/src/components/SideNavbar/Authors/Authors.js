@@ -111,16 +111,16 @@ class Authors extends Component {
                         <Col>
                           Portfolio: <a className="contactLink" target="_blank" href="https://michjmend.github.io/My-Portfolio/"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/moleskine.png" /></a>
                         </Col>
-                        <Col>
+                        {/* <Col>
                           Resume: <a className="contactLink" target="_blank" href="#"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/resume.png" /></a>
-                        </Col>
+                        </Col> */}
                       </Row>
                       <Row>
                         <Col>
                           Contact:
                             <a className="contactLink" href="mailto:michjmend@gmail.com"><i class="far fa-envelope"></i></a>
                             <a className="contactLink" target="_blank" href="https://www.linkedin.com/in/michelle-j-mendieta"><i class="fab fa-linkedin-in"></i></a>
-                            <a className="contactLink" target="_blank" href="https://www.facebook.com/michelle.mendieta.52"><i class="fab fa-facebook-f"></i></a>
+                            {/* <a className="contactLink" target="_blank" href="https://www.facebook.com/michelle.mendieta.52"><i class="fab fa-facebook-f"></i></a> */}
                             <a className="contactLink" target="_blank" href="https://www.instagram.com/michjmend/?hl=en"><i class="fab fa-instagram"></i></a>
                             <a className="contactLink" target="_blank" href="https://github.com/michjmend"><i class="fab fa-github"></i></a>
                         </Col>
