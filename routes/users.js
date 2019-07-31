@@ -26,9 +26,9 @@ router.post("/", [
   check("address1", "Please enter your street address")
     .not()
     .isEmpty(),
-  check("state", "Please enter your state")
-    .not()
-    .isEmpty(),
+  // check("state", "Please enter your state")
+  //   .not()
+  //   .isEmpty(),
   check("zip", "Please enter your zipcode")
     .not()
     .isEmpty(),
