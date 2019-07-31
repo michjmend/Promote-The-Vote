@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import MM from '../../../components/SideNavbar/Authors/MM.png';
+import AT from '../../../components/SideNavbar/Authors/AT.jpg';
 import SY from '../../../components/SideNavbar/Authors/SY.jpg';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './Authors.css';
@@ -23,26 +24,25 @@ class Authors extends Component {
                 <Col>
                   <Row>
                     <Col md={3}>
-                      {/* <img className="Photo" src={} alt="AT pic" /> */}
+                      <img className="Photo" src={AT} alt="AT pic" />
                     </Col>
                     <Col md={9}>
                       <h3>Andrew Tirpok</h3>
                       <Row>
                         <Col>
-                          Portfolio: <a className="contactLink" target="_blank" href="#"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/moleskine.png" /></a>
+                          Portfolio: <a className="contactLink" target="_blank" href="https://androosk.github.io/Andrew-Tirpok/"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/moleskine.png" /></a>
                         </Col>
-                        <Col>
+                        {/* <Col>
                           Resume: <a className="contactLink" target="_blank" href="#"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/resume.png" /></a>
-                        </Col>
+                        </Col> */}
                       </Row>
                       <Row>
                         <Col>
                           Contact:
-                            <a className="contactLink" href="mailto:michjmend@gmail.com"><i class="far fa-envelope"></i></a>
-                            <a className="contactLink" target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a className="contactLink" target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a className="contactLink" target="_blank" href="#"><i class="fab fa-instagram"></i></a>
-                            <a className="contactLink" target="_blank" href="#"><i class="fab fa-github"></i></a>
+                            <a className="contactLink" href="mailto:atirpok3@gmail.com"><i class="far fa-envelope"></i></a>
+                            <a className="contactLink" target="_blank" href="https://www.linkedin.com/in/andrew-tirpok-05296815/"><i class="fab fa-linkedin-in"></i></a>
+                            <a className="contactLink" target="_blank" href="https://www.instagram.com/androosk/"><i class="fab fa-instagram"></i></a>
+                            <a className="contactLink" target="_blank" href="https://github.com/androosk"><i class="fab fa-github"></i></a>
                         </Col>
                       </Row>
                     </Col>

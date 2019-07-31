@@ -7,7 +7,7 @@ import MainContent from './components/MainContent/MainContent';
 import Alerts from "./components/layouts/Alerts"
 import Register from "./components/auth/Register"
 import Login from "./components/auth/Login"
-import CreatePost from "../src/components/CreatePost/CreatePost";
+import PostForm from "./components/posts/PostForm" ;
 import Authors from "./components/SideNavbar/Authors/Authors";
 import MissionStatement from "./components/SideNavbar/MissionStatement/MissionStatement";
 import AlertState from "./context/alert/AlertState"
@@ -29,7 +29,7 @@ console.log(process.env.REACT_APP_UPLOAD_CLOUDNAME)
               <Route exact path="/" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><MainContent /></div>)} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/post" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><CreatePost /></div>)} />
+              <Route exact path="/post" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><PostForm /></div>)} />
               <Route exact path="/Authors" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><Authors /></div>)} />
               <Route exact path="/MissionStatement" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><MissionStatement /></div>)} />
             </Switch>

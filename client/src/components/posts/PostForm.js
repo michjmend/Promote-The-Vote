@@ -1,24 +1,23 @@
 import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alert/alertContext"
 import AuthContext from "../../context/auth/authContext"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import CloudinaryUploadWidget from "../../components/CloudinaryUploadWidget"
+import CloudinaryUploadWidget from "../CloudinaryUploadWidget"
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./CreatePost.css";
+import "./PostForm.css";
 
-const CreatePost = props => {
+const PostForm = props => {
   const alertContext = useContext(AlertContext)
   const authContext = useContext(AuthContext)
   const [isSubmitted] = useState(false)
   const { setAlert } = alertContext
   const { isAuthenticated } = authContext
 
-  useEffect(() => {
-    if(isAuthenticated) {
-      props.history.push("/")
-    }
-  }, [isAuthenticated, props.history])
+  // useEffect(() => {
+  //   if(isAuthenticated) {
+  //     props.history.push("/")
+  //   }
+  // }, [isAuthenticated, props.history])
 
   const [post, setPost] = useState({
     title: "",
@@ -89,7 +88,7 @@ const CreatePost = props => {
                     />
                   </div>
                   <div className="row d-flex justify-content-center">
-                    <label className="videoStory" htmlFor="photo"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/add-image.png" /> Video Story: </label>
+                    <label className="" htmlFor="photo"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/add-image.png" /> Upload Video Story:</label>
                     <CloudinaryUploadWidget className="" cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
                   </div>
                   <div className="form-group">
@@ -107,4 +106,4 @@ const CreatePost = props => {
       </div>
     );
   }
-export default CreatePost;
+export default PostForm;
