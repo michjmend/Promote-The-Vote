@@ -1,23 +1,25 @@
 import React, { useReducer } from "react"
 import axios from "axios"
-import PostContext from "./postContext"
-import postReducer from "./postReducer"
+import PostsContext from "./postsContext"
+import postsReducer from "./postsReducer"
 import {
-  GET_POSTS,
   ADD_POST,
+  GET_POSTS,
   POST_ERROR,
+  CLEAR_CURRENT
 } from "../types"
 
-const PostState = props => {
+const PostsState = props => {
   const initialState = {
-    posts: null,
-    current: null,
-    filtered: null,
+    posts: [],
+    // current: null,
+    // filtered: null,
     error: null
   }
-  const [state, dispatch] = useReducer(postReducer, initialState)
+  const [state, dispatch] = useReducer(postsReducer, initialState)
   // Get Posts
   const getPosts = async () => {
+    console.log("getting the posts")
     try {
       const res = await axios.get("/api/posts")
       dispatch({ type: GET_POSTS, payload: res.data })
@@ -34,25 +36,29 @@ const PostState = props => {
       }
     }
     try {
-      const res = await axios.post("api/posts", post, config)
+      const res = await axios.post("/api/posts", post, config)
       dispatch({ type: ADD_POST, payload: res.data })
     } catch (err) {
       dispatch({ type: POST_ERROR,
       payload: err.response.msg})
     }
   }
-
+  // Clear current post form
+  const clearCurrent = () => {
+    dispatch({ type: CLEAR_CURRENT })
+  }
   return(
-    <PostContext.Provider
+    <PostsContext.Provider
     value={{
       posts: state.posts,
       error: state.error,
-      getPosts,
       addPost,
+      getPosts,
+      clearCurrent,
     }}>
       { props.children }
-    </PostContext.Provider>
+    </PostsContext.Provider>
   )
 }
 
-export default PostState
+export default PostsState

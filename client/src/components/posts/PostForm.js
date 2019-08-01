@@ -1,28 +1,34 @@
-import React, { useState, useContext, useEffect } from "react";
-import AlertContext from "../../context/alert/alertContext"
-import AuthContext from "../../context/auth/authContext"
+import React, { useContext, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import CloudinaryUploadWidget from "../CloudinaryUploadWidget"
+import { BrowserRouter } from "react-router-dom"
+import CloudinaryVideoWidget from "../CloudinaryVideoWidget"
+import PostsContext from "../../context/posts/postsContext"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PostForm.css";
+import axios from "axios";
 
 const PostForm = props => {
-  const alertContext = useContext(AlertContext)
-  const authContext = useContext(AuthContext)
   const [isSubmitted] = useState(false)
-  const { setAlert } = alertContext
-  const { isAuthenticated } = authContext
+  const postsContext = useContext(PostsContext)
+  const { addPost } = postsContext
 
-  // useEffect(() => {
-  //   if(isAuthenticated) {
-  //     props.history.push("/")
-  //   }
-  // }, [isAuthenticated, props.history])
+  // const alertContext = useContext(AlertContext)
+  // console.log("AlertContext ", alertContext)
+  // const authContext = useContext(AuthContext)
+  // const { setAlert } = alertContext
+  // const { isAuthenticated } = authContext
+  useEffect(() => {
+    setPost({
+      title: "",
+      story: "",
+      video: "https://via.placeholder.com/200x200",
+    })
+  }, [postsContext])
 
   const [post, setPost] = useState({
     title: "",
     story: "",
-    video: ""
+    video: "https://via.placeholder.com/200x200"
   })
 
   const setCloudinaryInfo = (imgUrl) => {
@@ -35,11 +41,7 @@ const PostForm = props => {
 
   const onSubmit = e => {
     e.preventDefault()
-    post({
-      title,
-      story,
-      video
-    })
+    addPost(post)
   }
 
     return (
@@ -73,6 +75,7 @@ const PostForm = props => {
                     <label>Title:</label>
                     <input
                       type="text"
+                      name="title"
                       className="form-control"
                       value={title}
                       onChange={onChange}
@@ -82,14 +85,16 @@ const PostForm = props => {
                     <label>Story:</label>
                     <textarea
                       className="form-control"
+                      name="story"
                       value={story}
                       onChange={onChange}
                       rows="3"
                     />
                   </div>
                   <div className="row d-flex justify-content-center">
-                    <label className="" htmlFor="photo"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/add-image.png" /> Upload Video Story:</label>
-                    <CloudinaryUploadWidget className="" cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
+                    <label className="videoStory" htmlFor="video"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/add-image.png" /> Video Story: </label>
+                    {/* <label className="" htmlFor="photo"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/add-image.png" /> Upload Video Story:</label> */}
+                    <CloudinaryVideoWidget className="" cloudinaryInfo={setCloudinaryInfo} isSubmitted={isSubmitted} />
                   </div>
                   <div className="form-group">
                     <input

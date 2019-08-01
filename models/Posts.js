@@ -1,7 +1,8 @@
+require("mongoose-type-url")
 const mongoose = require("mongoose");
 
-// Save a reference to the Schema constructor
-const Schema = mongoose.Schema;
+const { Schema } = mongoose
+const { Url } = mongoose.SchemaTypes
 
 // Using the Schema constructor, create a new UserSchema object
 const PostsSchema = new Schema({
@@ -15,11 +16,14 @@ const PostsSchema = new Schema({
     },
     video: {
       type: Url,
-      default: "https://via.placeholder.com/200x200"
     },
     user: {
       type: Schema.Types.ObjectId,
       ref: "User"
+    },
+    date: {
+      type: Date,
+      default: Date.now
     }
   });
 

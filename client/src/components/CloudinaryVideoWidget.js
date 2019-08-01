@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import window from 'global/window';
-import { Image, Transformation } from 'cloudinary-react';
+import { Image, Video, Transformation } from 'cloudinary-react';
 
 const MAX_IMAGE_SIZE = 61440000; // Maximum Image Size, around 6MB
 
@@ -12,7 +12,7 @@ const SuccessText = styled.div`
   background-color: #ccff99;
 `;
 
-const CloudinaryUploadWidget = (props) => {
+const CloudinaryVideoWidget = (props) => {
   const [imageUploaded, setImageUploaded] = useState(false);
   const [imgUrl, setImgUrl] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
@@ -39,7 +39,7 @@ const CloudinaryUploadWidget = (props) => {
       cloudinaryWidget = window.cloudinary.createUploadWidget({
         multiple: false,
         cropping: false,
-        resourceType: 'image',
+        resourceType: 'video',
         maxFileSize: MAX_IMAGE_SIZE,
         cloudName: process.env.REACT_APP_UPLOAD_CLOUDNAME,
         uploadPreset: process.env.REACT_APP_UPLOAD_PRESET,
@@ -72,8 +72,8 @@ const CloudinaryUploadWidget = (props) => {
   if (imageUploaded && !isSubmitted) {
     return (
       <div>
-        <SuccessText>Image Successfully Uploaded</SuccessText>
-        <Image
+        <SuccessText>Video Successfully Uploaded</SuccessText>
+        <Video
           cloudName={process.env.REACT_APP_UPLOAD_CLOUDNAME}
           publicId={cloudPublicId}
         >
@@ -83,7 +83,7 @@ const CloudinaryUploadWidget = (props) => {
             gravity="auto"
             crop="thumb"
           />
-        </Image>
+        </Video>
       </div>
     );
   }
@@ -110,9 +110,9 @@ const CloudinaryUploadWidget = (props) => {
   );
 };
 
-CloudinaryUploadWidget.propTypes = {
+CloudinaryVideoWidget.propTypes = {
   cloudinaryInfo: PropTypes.func.isRequired,
   isSubmitted: PropTypes.bool.isRequired,
 };
 
-export default CloudinaryUploadWidget;
+export default CloudinaryVideoWidget;

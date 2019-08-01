@@ -35,7 +35,7 @@ app.use(cors())
 
 app.use("/api/users", require("./routes/users"))
 app.use("/api/auth", require("./routes/auth"))
-// app.use("api/posts", require("./routes/posts"))
+app.use("/api/posts", require("./routes/posts"))
 // router.use(function(req, res) {
 //   res.sendFile(path.join(__dirname, “/client/public/index.html”));
 // });
