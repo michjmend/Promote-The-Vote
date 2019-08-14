@@ -71,7 +71,7 @@ const TopNav = (props) => {
                 <Link to="/"><div className="rotate-scale-up logo"><img src={logo} alt ={"logo"}/></div></Link>
                 <div><img src={justTJ2} alt ="raisedHands" width= "100%"></img></div>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                  <ul className="navbar-nav ml-auto mt-2 mt-lg-0 loggedin">
                   {isAuthenticated ? authLinks : guestLinks }
                   </ul>
                 </div>
