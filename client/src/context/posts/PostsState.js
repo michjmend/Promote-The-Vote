@@ -24,7 +24,7 @@ const PostsState = props => {
   const getPosts = async () => {
     console.log("getting all posts")
     try {
-      const res = await axios.get("/api/posts/allstories")
+      const res = await axios.get("/api/posts")
       dispatch({ type: GET_POSTS, payload: res.data })
     } catch (err) {
       dispatch({ type: POST_ERROR,

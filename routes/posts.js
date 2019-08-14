@@ -6,7 +6,7 @@ const User = require("../models/User")
 const Posts = require("../models/Posts")
 
 // Get all posts
-router.get("/allstories", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const posts = await Posts.find({}).sort({ date: -1})
     console.log("Posts in the house ",posts)
@@ -17,10 +17,10 @@ router.get("/allstories", async (req, res) => {
   }
 })
 // Get user's posts
-router.get("/userposts", auth, async (req, res) => {
+router.get("/:id", auth, async (req, res) => {
   console.log("getting the user's posts")
   try {
-    const posts = await Posts.find({ user: req.user.id }).sort({ date: -1 })
+    const posts = await Posts.find({ user: req.params.id }).sort({ date: -1 })
     res.json(posts)
   } catch (err) {
     console.error(err.msg)

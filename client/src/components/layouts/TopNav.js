@@ -67,7 +67,8 @@ const TopNav = (props) => {
           <Row>
             <Col>
               <nav className="navbar navbar-expand-lg border-bottom">
-                {currentLocation === "/" ? toggler : currentLocation === "/Authors" ? toggler : currentLocation === "/MissionStatement" ? toggler : noToggle}
+                {currentLocation === "/Register" ? noToggle : currentLocation === "/Login" ? noToggle : toggler}
+                {/* {currentLocation === "/" ? toggler : currentLocation === "/Authors" ? toggler : currentLocation === "/MissionStatement" ? toggler : noToggle} */}
                 <Link to="/"><div className="rotate-scale-up logo"><img src={logo} alt ={"logo"}/></div></Link>
                 <div><img src={justTJ2} alt ="raisedHands" width= "100%"></img></div>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
