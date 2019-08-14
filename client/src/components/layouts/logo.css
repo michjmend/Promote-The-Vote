@@ -54,6 +54,15 @@ nav{
   height: 175px;
   left: 50px;
 }
+
+.loggedin{
+  font-family: "Muli", sans-serif;
+  color:red;
+  font-size:25px;
+  text-align:center;
+}
+
+
 /* .rotate-scale-up {
   -webkit-animation: rotate-scale-up 0.65s linear both;
   animation: rotate-scale-up 0.65s linear both;
@@ -140,5 +149,3 @@ nav{
             transform-origin: 0% 0%;
   }
 }
-
-
