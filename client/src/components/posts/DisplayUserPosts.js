@@ -2,13 +2,13 @@ import React, { useContext, useEffect, Fragment } from "react";
 import PostsContext from "../../context/posts/postsContext"
 import PostItem from "./PostItem"
 
-const DisplayPosts = () => {
+const DisplayUserPosts = () => {
   const postsContext = useContext(PostsContext)
-  const { posts, getPosts } = postsContext
+  const { posts, getUserPosts } = postsContext
 
 
   useEffect(() => {
-    getPosts()
+    getUserPosts()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -28,4 +28,4 @@ const DisplayPosts = () => {
   )
 }
 
-export default DisplayPosts
+export default DisplayUserPosts
