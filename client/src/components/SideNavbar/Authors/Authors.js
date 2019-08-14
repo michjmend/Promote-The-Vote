@@ -58,7 +58,7 @@ class Authors extends Component {
                           Portfolio: <a className="contactLink" target="_blank" rel="noopener noreferrer" href="https://kristendlr.github.io/updatedPortfolio/"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/moleskine.png" /></a>
                         </Col>
                         <Col>
-                          Resume: <a className="contactLink" target="_blank" rel="noopener noreferrer" href="https://dochub.com/kristendelarosac13285b8/a9E12P/web-dev-k-de-la-rosa-resume-2-pdf?dt=Tosz6W5kzwxtZqgUUX9s"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/resume.png" /></a>
+                          Resume: <a className="contactLink" target="_blank" rel="noopener noreferrer" href="https://dochub.com/kristendelarosac13285b8/rxPn9R/2019-web-dev-k-de-la-rosa-resume?dt=vaqg4i8sZQ5vPM1zWimo"><img className="icon" alt="icon" src="https://img.icons8.com/color/48/000000/resume.png" /></a>
                         </Col>
                       </Row>
                       <Row>
