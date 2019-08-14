@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import TopNav from "./components/layouts/TopNav"
@@ -18,27 +18,28 @@ require("dotenv").config()
 // use normal bootstrap if required. give yarn add bootstrap for below...
 // import "bootstrap/dist/css/bootstrap.min.css";
 
-const App = props => {
-  return (
-    <AuthState>
-      <PostsState>
-        <AlertState>
-          <Router>
-            <TopNav />
-            <Alerts />
-              <Switch>
-                <Route exact path="/" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><MainContent /></div>)} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/post" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><PostForm /></div>)} />
-                <Route exact path="/Authors" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><Authors /></div>)} />
-                <Route exact path="/MissionStatement" component={()=>(<div className="d-flex" id="wrapper"><SideNavbar /><MissionStatement /></div>)} />
-              </Switch>
-          </Router>
-        </AlertState>
-      </PostsState>
-    </AuthState>
-  );
+class App extends Component {
+  render() {
+    return (
+      <AuthState>
+        <PostsState>
+          <AlertState>
+            <Router>
+              <Alerts />
+                <Switch>
+                  <Route exact path="/" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><SideNavbar /><MainContent /></div></div>)} />
+                  <Route exact path="/register" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><Register {...props}/></div></div>)} />
+                  <Route exact path="/login" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><Login {...props}/></div></div>)} />
+                  <Route exact path="/post" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><PostForm {...props}/></div></div>)} />
+                  <Route exact path="/Authors" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><SideNavbar /><Authors /></div></div>)} />
+                  <Route exact path="/MissionStatement" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><SideNavbar /><MissionStatement /></div></div>)} />
+                </Switch>
+            </Router>
+          </AlertState>
+        </PostsState>
+      </AuthState>
+    );
+  }
 }
 
 export default App;

@@ -73,7 +73,7 @@ const CloudinaryVideoWidget = (props) => {
     return (
       <div>
         <SuccessText>Video Successfully Uploaded</SuccessText>
-        <Video
+        {/* <Video
           cloudName={process.env.REACT_APP_UPLOAD_CLOUDNAME}
           publicId={cloudPublicId}
         >
@@ -83,7 +83,7 @@ const CloudinaryVideoWidget = (props) => {
             gravity="auto"
             crop="thumb"
           />
-        </Video>
+        </Video> */}
       </div>
     );
   }

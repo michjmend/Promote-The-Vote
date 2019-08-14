@@ -48,11 +48,6 @@ const Register = props => {
     setUser({ ...user, picture: imgUrl })
   };
 
-  const stateHandler = (state) => {
-    console.log("handlerHit");
-    setUser({ state: state })
-  };
-
   const { username, firstname, lastname, email, address1, address2, city, state, zip, picture, password, password2 } = user
 
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value })

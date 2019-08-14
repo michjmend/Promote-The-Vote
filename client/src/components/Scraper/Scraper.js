@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Scraper.css";
 import flagcheck from './flagcheck.png';
 import ScraperState from "../../context/scraper/ScraperState";
-// import Article from  "./Article";
 
 export default class Scraper extends Component {
   render() {
@@ -15,7 +13,7 @@ export default class Scraper extends Component {
           <div className="factText">
             A Location for individuals to Research the Credibility of
             Politicians in the Media. These articles provided, have
-            been published through <a href="https://www.factcheck.org/" target="_blank">FactCheck.org.</a> For further access to their
+            been published through <a href="https://www.factcheck.org/" target="_blank" rel="noopener noreferrer">FactCheck.org.</a> For further access to their
             archives please visit their website.
             <div className="lineBreak"></div>
           </div>

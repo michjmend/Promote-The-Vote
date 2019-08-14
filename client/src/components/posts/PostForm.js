@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { BrowserRouter } from "react-router-dom"
 import CloudinaryVideoWidget from "../CloudinaryVideoWidget"
 import PostsContext from "../../context/posts/postsContext"
+import AuthContext from "../../context/auth/authContext"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PostForm.css";
 import axios from "axios";
@@ -11,13 +12,19 @@ const PostForm = props => {
   const [isSubmitted] = useState(false)
   const postsContext = useContext(PostsContext)
   const { addPost } = postsContext
-
+  const authContext = useContext(AuthContext)
+  const { isAuthenticated } = authContext
   // const alertContext = useContext(AlertContext)
   // console.log("AlertContext ", alertContext)
   // const authContext = useContext(AuthContext)
   // const { setAlert } = alertContext
-  // const { isAuthenticated } = authContext
+  console.log(props)
+
   useEffect(() => {
+    if (!isAuthenticated) {
+      props.history.push("/")
+    }
+
     setPost({
       title: "",
       story: "",

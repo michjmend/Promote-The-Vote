@@ -1,6 +1,6 @@
-import React, { useContext} from 'react'
+import React from 'react'
 import PropTypes from "prop-types"
-import { Video } from "cloudinary-react"
+// import { Video } from "cloudinary-react"
 // import PostsContext from "../../context/posts/postsContext"
 
 const PostItem = ({ post }) => {
@@ -20,14 +20,6 @@ const PostItem = ({ post }) => {
         <Link to="/delete/:id" className="btn btn-danger"><i className="fas fa-trash-alt"></i></Link> */}
       </div>
     </div>
-  
-  
-  
-  
-  
-    // <div>
-    //   <h1>Yo posticles</h1>
-    // </div>
   )
 }
 

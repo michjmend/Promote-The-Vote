@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import './MissionStatement.css';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,7 +13,7 @@ class MissionStatement extends Component {
             <div className="MissionStatement">
               <div className="card">
                 <h1 className="navyWord text-center">Our Mission</h1>
-                <h4 className="text-center"><i class="fas fa-flag-usa"></i> <span className="navyWord">P R O M O T E </span><i class="fas fa-flag-usa"></i> <span className="navyWord">T H E </span><i class="fas fa-flag-usa"></i> <span className="navyWord">V O T E </span><i class="fas fa-flag-usa"></i></h4>
+                <h4 className="text-center"><i className="fas fa-flag-usa"></i> <span className="navyWord">P R O M O T E </span><i className="fas fa-flag-usa"></i> <span className="navyWord">T H E </span><i className="fas fa-flag-usa"></i> <span className="navyWord">V O T E </span><i className="fas fa-flag-usa"></i></h4>
               </div>
               <div className="missionContent card">
                 <p>
@@ -27,7 +27,7 @@ class MissionStatement extends Component {
                 </p>
               </div>
               <div className="video">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/9-IgaqXjl24" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="560" height="315" title="promotevote" src="https://www.youtube.com/embed/9-IgaqXjl24" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
             </div>
           </Col>
