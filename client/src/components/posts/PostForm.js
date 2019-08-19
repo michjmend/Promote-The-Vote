@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom"
 import CloudinaryVideoWidget from "../CloudinaryVideoWidget"
 import PostsContext from "../../context/posts/postsContext"
 import AuthContext from "../../context/auth/authContext"
+import DisplayUserPosts from "../posts/DisplayUserPosts"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PostForm.css";
 import axios from "axios";
@@ -113,6 +114,7 @@ const PostForm = props => {
                 </form>
               </Col>
             </Row>
+            <DisplayUserPosts />
           </Container>
         </div>
       </div>

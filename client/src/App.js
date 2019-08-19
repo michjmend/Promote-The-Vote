@@ -30,7 +30,7 @@ class App extends Component {
                   <Route exact path="/" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><SideNavbar /><MainContent /></div></div>)} />
                   <Route exact path="/register" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><Register {...props}/></div></div>)} />
                   <Route exact path="/login" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><Login {...props}/></div></div>)} />
-                  <Route exact path="/post" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><PostForm {...props}/></div></div>)} />
+                  <Route exact path="/post" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><SideNavbar /><PostForm {...props}/></div></div>)} />
                   <Route exact path="/Authors" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><SideNavbar /><Authors /></div></div>)} />
                   <Route exact path="/MissionStatement" render={(props)=>(<div><TopNav {...props}/><div className="d-flex" id="wrapper"><SideNavbar /><MissionStatement /></div></div>)} />
                 </Switch>

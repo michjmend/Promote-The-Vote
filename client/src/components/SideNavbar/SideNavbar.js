@@ -20,7 +20,7 @@ const signedIn = (
 )
 const guestUser = (
   <Fragment>
-    <Link className="btn btn-danger btn-lg btn-block" to="/login">Sign in to Post! <i className="fas fa-sign-in-alt "></i></Link>
+    <Link className="btn btn-danger btn-lg btn-block" to="/Login">Sign in to Post! <i className="fas fa-sign-in-alt "></i></Link>
   </Fragment>
 )
 
