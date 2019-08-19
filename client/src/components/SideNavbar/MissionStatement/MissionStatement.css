@@ -1,5 +1,7 @@
 .MissionStatement {
   padding: 10px;
+  font-family: 'Exo', sans-serif;
+  max-width: 650px;
 }
 
 .missionContent {

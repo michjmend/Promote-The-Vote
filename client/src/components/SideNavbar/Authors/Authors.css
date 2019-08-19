@@ -4,6 +4,8 @@
 
 .Authors {
   padding: 10px;
+  max-width: 650px;
+  font-family: 'Exo', sans-serif;
 }
 
 .Photo {
