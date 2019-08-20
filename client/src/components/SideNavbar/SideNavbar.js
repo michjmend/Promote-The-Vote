@@ -29,19 +29,19 @@ const guestUser = (
       <div className="border-right" id="sidebar-wrapper">
         {isAuthenticated ? signedIn : guestUser}
         <div className="list-group list-group-flush">
-          <h5 className="sidebartitle"><u>Resources:</u></h5>
+          <h5 className="sidebartitle"><u><img src="https://img.icons8.com/color/48/000000/external-link.png" /> Resources:</u></h5>
             <a className="list-group-item list-group-item-action" href="https://www.vote.org/am-i-registered-to-vote/?gclid=CjwKCAjw67XpBRBqEiwA5RCoceIDFFk-I4kBVE0THh5h3uIy43Xz0PTnF307YSpg3frm0KyQYtdbIRoCKhYQAvD_BwE" target="_blank" rel="noopener noreferrer">Register: How and Where?</a>
             <a className="list-group-item list-group-item-action" href="https://www.vote.org/absentee-voting-rules/" target="_blank" rel="noopener noreferrer">Early Bird Voter</a>
-          <h5 className="sidebartitle"><u>More Information:</u></h5>
+          <h5 className="sidebartitle"><u><img src="https://img.icons8.com/color/48/000000/connection-status-off--v2.png" /> More Information:</u></h5>
             <a className="list-group-item list-group-item-action" href="https://graphics.reuters.com/USA-ELECTION/010091471JC/index.html" target="_blank" rel="noopener noreferrer">Who is running in 2020?</a>
             <a className="list-group-item list-group-item-action" href="https://www.270towin.com/" target="_blank" rel="noopener noreferrer">Electoral College Map</a>
-          <h5 className="sidebartitle"><u>Other Links:</u></h5>
+          <h5 className="sidebartitle"><u><img src="https://img.icons8.com/color/48/000000/link.png" /> Other Links:</u></h5>
             <a className="list-group-item list-group-item-action" href="https://www.isidewith.com/political-quiz" target="_blank" rel="noopener noreferrer">2019 Political Quiz</a>
             <a className="list-group-item list-group-item-action" href="https://carpoolvote.com/" target="_blank" rel="noopener noreferrer">Need a ride to the Polls?</a>
           {/* <h5 className="sidebartitle"><u>Our Partners:</u></h5>
             <a className="list-group-item list-group-item-action" href="" target="_blank">Partner 1</a>
             <a className="list-group-item list-group-item-action" href="" target="_blank">Partner 2</a> */}
-          <h5 className="sidebartitle"><u>About Us:</u></h5>
+          <h5 className="sidebartitle"><u><img src="https://img.icons8.com/color/48/000000/about.png" /> About Us:</u></h5>
           <Link className="list-group-item list-group-item-action" to="/Authors">Authors</Link>
           <Link className="list-group-item list-group-item-action" to="/MissionStatement">Mission Statement</Link>
           <Container>
