@@ -19,7 +19,6 @@ const PostForm = props => {
   // console.log("AlertContext ", alertContext)
   // const authContext = useContext(AuthContext)
   // const { setAlert } = alertContext
-  console.log(props)
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -50,6 +49,7 @@ const PostForm = props => {
   const onSubmit = e => {
     e.preventDefault()
     addPost(post)
+    props.history.push("/")
   }
 
     return (
@@ -114,6 +114,7 @@ const PostForm = props => {
                 </form>
               </Col>
             </Row>
+            <h3>Your Current Posts Here:</h3>
             <DisplayUserPosts />
           </Container>
         </div>
