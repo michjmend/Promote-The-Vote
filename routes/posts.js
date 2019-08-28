@@ -21,7 +21,7 @@ router.get("/:id", auth, async (req, res) => {
   console.log("getting the user's posts")
   console.log(req.user.id)
   try {
-    const posts = await Posts.find({ user: req.user.id }).sort({ date: -1 })
+    const posts = await Posts.find({ theUser: req.user.id }).sort({ date: -1 })
     res.json(posts)
   } catch (err) {
     console.error(err.msg)
@@ -40,7 +40,7 @@ router.put("/:id", auth, async (req,res) => {
     let post = await Posts.findById(req.params.id)
     if(!post) return res.status(404).json({ msg: "Post not found"})
     // Make sure post belongs to user
-    if(post.user.toString() !== req.user.id){
+    if(post.theUser.toString() !== req.user.id){
       return res.status(401).json({ msg: "Not authorized" })
     }
     post = await Posts.findByIdAndUpdate(req.params.id,
@@ -63,7 +63,7 @@ router.post("/", auth, async (req, res) => {
       title,
       story,
       video,
-      user: req.user.id
+      theUser: req.user.id
     })
     const post = await newPost.save()
     res.json(post)
@@ -72,5 +72,20 @@ router.post("/", auth, async (req, res) => {
     res.status(500).send("Server Error")
   }
 })
-
+// Delete post
+router.delete("/:id", auth, async (req,res) => {
+  try {
+    let post = await Posts.findById(req.params.id)
+    if(!post) return res.status(404).json({ msg: "Post not found"})
+    // Make sure post belongs to user
+    if(post.theUser.toString() !== req.user.id) {
+      return res.status(401).json({ msg: "Not Authorized" })
+    }
+    await Posts.findByIdAndRemove(req.params.id)
+      res.json({ msg: "Contact Removed" })
+  } catch (err) {
+    console.error(err.message)
+    res.status(500).send("Server Error")
+  }
+})
 module.exports = router

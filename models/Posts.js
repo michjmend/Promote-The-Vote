@@ -17,7 +17,7 @@ const PostsSchema = new Schema({
     video: {
       type: Url,
     },
-    user: {
+    theUser: {
       type: Schema.Types.ObjectId,
       ref: "User"
     },
