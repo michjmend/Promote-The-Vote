@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom"
 import CloudinaryVideoWidget from "../CloudinaryVideoWidget"
 import PostsContext from "../../context/posts/postsContext"
 import AuthContext from "../../context/auth/authContext"
+import DisplayUserPosts from "../posts/DisplayUserPosts"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PostForm.css";
 import axios from "axios";
@@ -18,7 +19,6 @@ const PostForm = props => {
   // console.log("AlertContext ", alertContext)
   // const authContext = useContext(AuthContext)
   // const { setAlert } = alertContext
-  console.log(props)
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -49,6 +49,7 @@ const PostForm = props => {
   const onSubmit = e => {
     e.preventDefault()
     addPost(post)
+    props.history.push("/")
   }
 
     return (
@@ -113,6 +114,8 @@ const PostForm = props => {
                 </form>
               </Col>
             </Row>
+            <h3>Your Current Posts Here:</h3>
+            <DisplayUserPosts />
           </Container>
         </div>
       </div>

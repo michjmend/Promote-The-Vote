@@ -10,6 +10,7 @@ import {
   UPDATE_POST,
   SET_CURRENT,
   GET_USER_POSTS,
+  DELETE_POST,
 } from "../types"
 
 const PostsState = props => {
@@ -24,7 +25,7 @@ const PostsState = props => {
   const getPosts = async () => {
     console.log("getting all posts")
     try {
-      const res = await axios.get("/api/posts/allstories")
+      const res = await axios.get("/api/posts")
       dispatch({ type: GET_POSTS, payload: res.data })
     } catch (err) {
       dispatch({ type: POST_ERROR,
@@ -75,6 +76,18 @@ const PostsState = props => {
       })  
     }
   }
+  // Delete post
+  const deletePost = async id => {
+    try {
+      await axios.delete(`/api/posts/${id}`)
+
+      dispatch({ type: DELETE_POST, payload: id })
+    } catch (err) {
+      dispatch({ type: POST_ERROR,
+      payload: err.response.msg
+      })
+    }
+  }
   // Set current post
   const setCurrent = post => {
     dispatch({ type: SET_CURRENT, payload: post })
@@ -90,6 +103,7 @@ const PostsState = props => {
       error: state.error,
       addPost,
       getPosts,
+      deletePost,
       clearCurrent,
       updatePost,
       setCurrent,

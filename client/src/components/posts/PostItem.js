@@ -1,23 +1,39 @@
-import React from 'react'
+import React, { Fragment, useContext } from 'react'
 import PropTypes from "prop-types"
-// import { Video } from "cloudinary-react"
-// import PostsContext from "../../context/posts/postsContext"
+import Moment from "react-moment"
+import PostsContext from "../../context/posts/postsContext"
+import AuthContext from "../../context/auth/authContext"
 
 const PostItem = ({ post }) => {
-  const { title, story, video, date } = post
+  const { _id, theUser, title, story, video, date } = post
+  const postsContext = useContext(PostsContext)
+  const { deletePost } = postsContext
+  const authContext = useContext(AuthContext)
+  const { user } = authContext
+
+  const onDelete = (e) => {
+    deletePost(_id)
+  }
+
+  const activeUser = (
+    <Fragment>
+      {/* <button type="button" className="btn btn-warning">edit post</button> */}
+      <button type="button" class="btn btn-danger" onClick={onDelete}>delete post</button>
+    </Fragment>
+  )
+  const noUser = (
+    <Fragment></Fragment>
+  )
 
   return (
     <div className="card mb-3">
-      <video id="demo-player" controls className="cld-video-player" src={video}></video>
-      {/* <iframe width="560" height="315" src="https://res.cloudinary.com/dcuspzza/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-      {/* <img src={video} width="30%" className="card-img-top" alt="..." /> */}
+      <video id="demo-player" controls className="cld-video-player card-img-top" src={video}></video>
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">{story}</p>
-        <p className="card-text"><small className="text-muted">Last updated {date}</small></p>
-        {/* <Link className="btn btn-outline-danger" to="/">Display Posts</Link>
-        <Link to="/edit/:id" className="btn btn-primary"><i className="fas fa-edit"></i></Link>
-        <Link to="/delete/:id" className="btn btn-danger"><i className="fas fa-trash-alt"></i></Link> */}
+        <p className="card-text"><small className="text-muted">Last updated <Moment format='MMMM Do YYYY, h:mm:ss a'>{date}</Moment></small></p>
+        {/* {activeUser} */}
+        {user && user._id === theUser ? activeUser : noUser}
       </div>
     </div>
   )
