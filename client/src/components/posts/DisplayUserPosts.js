@@ -21,6 +21,10 @@ const DisplayUserPosts = () => {
         {posts.map(post => (
           <div key={post._id}>
             <PostItem post={post}/>
+            {/* <button type="button" className="btn btn-warning">edit post</button>
+            <button type="button" class="btn btn-danger">delete post</button>
+            <p>delete button</p>
+            <p>edit button</p> */}
           </div>
         ))}
       </div>

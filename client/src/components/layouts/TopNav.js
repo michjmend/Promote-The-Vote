@@ -16,6 +16,7 @@ const TopNav = (props) => {
   const currentLocation = props.location.pathname
   const onLogout = () => {
     logout()
+    props.history.push("/")
   }
 
   const toggle = e => {
